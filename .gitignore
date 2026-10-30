@@ -1,0 +1,6 @@
+# Personal files the voice generator creates locally
+voice-kit/voice-config.json
+voice-kit/generate-report.txt
+voice-kit/elevenlabs-report.txt
+voice-kit/test-voice.mp3
+audio/*.part

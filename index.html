@@ -1,0 +1,1522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JL1KBEZPQX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied', analytics_storage:'denied', region:['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH', 'CA-QC']});
+gtag('consent', 'default', {ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied', analytics_storage:'granted'});
+gtag('js', new Date());
+gtag('config', 'G-JL1KBEZPQX', {allow_google_signals:false, allow_ad_personalization_signals:false});
+</script>
+<meta name="description" content="Free Halloween trivia game for office parties and team events: a spooky game-show board, a black cat, a witch’s deal and a midnight wager.">
+<link rel="canonical" href="https://nightoffrights.monster/">
+<meta name="robots" content="noindex, follow">
+<meta name="author" content="Victoria">
+<meta name="theme-color" content="#15111d">
+<link rel="icon" href="/night-of-frights-game/favicon.ico" sizes="48x48">
+<link rel="icon" href="/night-of-frights-game/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/night-of-frights-game/apple-touch-icon.png">
+<link rel="manifest" href="/night-of-frights-game/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Victoria’s Night of Frights">
+<meta property="og:locale" content="en_CA">
+<meta property="og:url" content="https://nightoffrights.monster/">
+<meta property="og:title" content="Victoria’s Night of Frights">
+<meta property="og:description" content="A free Halloween quiz for the whole office: spooky trivia, a black cat, a witch’s deal and a midnight wager, with a narrator.">
+<meta property="og:image" content="https://nightoffrights.monster/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Victoria’s Night of Frights: a Halloween quiz for the whole office, with a glowing jack-o'-lantern">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Victoria’s Night of Frights">
+<meta name="twitter:description" content="A free Halloween quiz for the whole office: spooky trivia, a black cat, a witch’s deal and a midnight wager, with a narrator.">
+<meta name="twitter:image" content="https://nightoffrights.monster/og-image.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://nightoffrights.monster/#website", "url": "https://nightoffrights.monster/", "name": "Victoria’s Night of Frights", "alternateName": "Night of Frights", "inLanguage": "en"}, {"@type": "WebApplication", "@id": "https://nightoffrights.monster/#game", "url": "https://nightoffrights.monster/", "name": "Victoria’s Night of Frights", "description": "Free Halloween trivia game for office parties and team events: a spooky game-show board, a black cat, a witch’s deal and a midnight wager.", "image": "https://nightoffrights.monster/og-image.png", "inLanguage": "en", "applicationCategory": "GameApplication", "genre": ["Trivia", "Quiz", "Party game"], "operatingSystem": "Any", "browserRequirements": "Requires JavaScript. Best in Chrome or Edge.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CAD"}, "author": {"@type": "Person", "name": "Victoria"}, "isPartOf": {"@id": "https://nightoffrights.monster/#website"}}]}</script>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Victoria’s Night of Frights · Halloween Office Quiz Game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans:wght@400;500;700;800&family=Oswald:wght@400;500;600&family=Pirata+One&display=swap">
+<style>
+/* Layout: one candlelit game table — scoreboard strip on top, 5×5 board of "cards" below, questions open as a full-screen overlay for the projector. Single dark theme by design (Halloween night). */
+:root{
+  color-scheme: dark;
+  --night:#15111d;
+  --dusk:#1f1929;
+  --cell:#2b2239;
+  --cell-hi:#3a2e4c;
+  --line:#41355a;
+  --bone:#f2e9d8;
+  --ash:#ab9fbd;
+  --candle:#f2a24c;
+  --ember:#ffd58a;
+  --good:#84bd7c;
+  --bad:#e66a5e;
+  --witch:#a98be0;
+  --f-display:"Pirata One","Old English Text MT","Times New Roman",serif;
+  --f-text:"Alegreya",Georgia,"Times New Roman",serif;
+  --f-ui:"Alegreya Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-num:"Oswald","Arial Narrow","Helvetica Neue",sans-serif;
+  --r:10px;
+}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{
+  background:var(--night);
+  background-image:
+    radial-gradient(ellipse 60% 45% at 88% -8%, color-mix(in srgb,var(--candle) 14%,transparent), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 0% 110%, color-mix(in srgb,var(--witch) 10%,transparent), transparent 70%);
+  background-attachment:fixed;
+  color:var(--bone);
+  font-family:var(--f-ui);
+  font-size:16px;
+  line-height:1.45;
+}
+#app{
+  max-width:1400px;margin:0 auto;
+  padding-block:20px 40px;
+  padding-left:max(16px, env(safe-area-inset-left,0px));
+  padding-right:max(16px, env(safe-area-inset-right,0px));
+}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--ember);outline-offset:2px}
+.btn{
+  border:1px solid var(--line);background:var(--dusk);
+  padding:.55em 1em;border-radius:999px;font-weight:700;letter-spacing:.02em;
+  transition:background .15s,border-color .15s;
+}
+.btn:hover{background:var(--cell-hi);border-color:var(--ash)}
+.btn.primary{background:var(--candle);color:var(--night);border-color:var(--candle)}
+.btn.primary:hover{background:var(--ember);border-color:var(--ember)}
+.btn.ghost{background:transparent}
+.btn.warn{border-color:var(--bad);color:var(--bad)}
+.btn.small{padding:.35em .8em;font-size:.88rem}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;color:var(--ash)}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+
+/* ---------- Setup ---------- */
+.setup{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:start;padding-top:24px}
+.title{font-family:var(--f-display);font-weight:400;font-size:clamp(3.4rem,9vw,7.5rem);line-height:.9;margin:.1em 0 .15em;color:var(--ember);text-shadow:0 0 30px color-mix(in srgb,var(--candle) 45%,transparent);text-wrap:balance}
+.lede{font-family:var(--f-text);font-size:1.2rem;max-width:34em;color:var(--bone)}
+.byline{display:block;font-family:var(--f-text);font-style:italic;font-weight:500;font-size:.3em;line-height:1.1;color:var(--candle);letter-spacing:.01em;text-shadow:none;margin-bottom:.2em}
+.panel{background:color-mix(in srgb,var(--dusk) 85%,transparent);border:1px solid var(--line);border-radius:14px;padding:22px}
+.teams-form{display:grid;gap:12px;margin-top:14px}
+.count-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.count-row .btn[aria-pressed="true"]{background:var(--candle);color:var(--night);border-color:var(--candle)}
+.field{display:grid;gap:4px}
+.field label{font-size:.85rem;color:var(--ash);font-weight:700}
+input[type=text],input[type=number],textarea,select{
+  width:100%;background:var(--night);color:var(--bone);border:1px solid var(--line);border-radius:8px;
+  padding:.6em .7em;font:inherit;
+}
+textarea{resize:vertical;min-height:3.2em;font-family:var(--f-text)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.rules{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:14px}
+.rules li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.rules b{display:block;color:var(--ember)}
+.rules p{margin:.15em 0 0;color:var(--bone);font-size:.98rem}
+.glyph{width:34px;height:34px;flex:none}
+
+/* ---------- Board ---------- */
+.topbar{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;margin-bottom:16px}
+.round-name{font-family:var(--f-display);font-size:clamp(2rem,4vw,3rem);line-height:1;color:var(--ember);margin:0}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:18px}
+.team{
+  background:var(--dusk);border:1px solid var(--line);border-radius:var(--r);
+  padding:10px 12px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 10px;min-width:0;
+}
+.team.turn{border-color:var(--candle);box-shadow:0 0 0 1px var(--candle),0 0 24px color-mix(in srgb,var(--candle) 25%,transparent)}
+.team .tname{font-weight:800;overflow-wrap:anywhere}
+.team .tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--candle);font-weight:800}
+.team .score{font-family:var(--f-num);font-size:2.1rem;line-height:1;font-variant-numeric:tabular-nums;grid-row:span 2;align-self:center}
+.team .score.neg{color:var(--bad)}
+.team .adj{display:flex;gap:6px}
+.team .adj button{width:30px;height:26px;border-radius:6px;border:1px solid var(--line);background:transparent;color:var(--ash);font-weight:800;line-height:1}
+.team .adj button:hover{color:var(--bone);border-color:var(--ash)}
+.board-wrap{overflow-x:auto;padding-bottom:4px}
+.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;min-width:640px}
+.cat{
+  display:flex;align-items:center;justify-content:center;text-align:center;min-height:78px;padding:10px;
+  font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:clamp(.82rem,1.25vw,1.05rem);
+  color:var(--bone);border-bottom:2px solid var(--candle);text-wrap:balance;
+}
+.cell{
+  aspect-ratio:16/10;max-width:100%;border-radius:var(--r);border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--cell-hi),var(--cell));
+  font-family:var(--f-num);font-weight:600;font-size:clamp(1.6rem,3.6vw,3rem);color:var(--candle);
+  font-variant-numeric:tabular-nums;transition:transform .12s,box-shadow .2s,color .2s;
+}
+.cell:hover:not(.used){color:var(--ember);transform:translateY(-2px);box-shadow:0 8px 28px color-mix(in srgb,var(--candle) 28%,transparent)}
+.cell.used{background:transparent;border-style:dashed;color:transparent;cursor:default}
+.board-foot{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-top:18px;color:var(--ash);font-size:.92rem}
+/* The board screen is exactly one screen tall: header, scores and footer take what they need, the grid shares the rest */
+.board-screen{display:flex;flex-direction:column;gap:clamp(8px,1.6vh,16px);height:calc(100vh - 60px);height:calc(100dvh - 60px);min-height:480px}
+.board-screen > .topbar,.board-screen > .scores,.board-screen > .board-foot{margin:0}
+.board-screen .round-name{font-size:clamp(1.6rem,min(4vw,5.5vh),3rem)}
+.board-screen .team{padding:clamp(6px,1vh,10px) 12px}
+.board-screen .team .score{font-size:clamp(1.4rem,4vh,2.1rem)}
+.board-screen .board-wrap{flex:1 1 auto;min-height:0;overflow:auto;padding-bottom:0}
+.board-screen .board{height:100%;min-height:300px;grid-template-rows:auto repeat(5,minmax(0,1fr));gap:clamp(6px,1.2vh,10px)}
+.board-screen .cat{min-height:0;padding:clamp(4px,.8vh,10px) 8px;font-size:clamp(.72rem,min(1.25vw,2.1vh),1.05rem)}
+.board-screen .cell{aspect-ratio:auto;min-height:0;font-size:clamp(1.3rem,min(3.6vw,6vh),3rem)}
+
+/* ---------- Overlay ---------- */
+.overlay{
+  position:fixed;inset:0;z-index:50;overflow-y:auto;
+  background:color-mix(in srgb,var(--night) 94%,transparent);backdrop-filter:blur(6px);
+  padding-top:calc(24px + env(safe-area-inset-top,0px));
+  padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));
+  padding-left:max(16px, env(safe-area-inset-left,0px));
+  padding-right:max(16px, env(safe-area-inset-right,0px));
+}
+.qcard{max-width:1040px;margin:0 auto;display:grid;gap:22px}
+.qhead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:baseline}
+.qhead .val{font-family:var(--f-num);font-size:2rem;color:var(--candle)}
+.qtext{font-family:var(--f-text);font-size:clamp(1.5rem,3.6vw,2.8rem);line-height:1.22;margin:0;text-wrap:balance}
+.special{display:flex;gap:16px;align-items:center;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--dusk)}
+.special.blackcat{border-color:var(--candle)}
+.special.witch{border-color:var(--witch)}
+.special h3{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1}
+.special.blackcat h3{color:var(--candle)}
+.special.witch h3{color:var(--witch)}
+.special p{margin:.3em 0 0}
+.special .glyph{width:64px;height:64px}
+.pick{display:flex;flex-wrap:wrap;gap:10px}
+.pick .btn{font-size:1.05rem}
+.timer{display:flex;align-items:center;gap:14px}
+.timer svg{width:74px;height:74px;transform:rotate(-90deg)}
+.timer .t{font-family:var(--f-num);font-size:2rem;min-width:2.2ch;font-variant-numeric:tabular-nums}
+.timer.low .t{color:var(--bad)}
+.answer{border-left:4px solid var(--candle);padding:6px 0 6px 18px}
+.answer .a{font-family:var(--f-text);font-weight:700;font-size:clamp(1.6rem,3.6vw,2.6rem);color:var(--ember);line-height:1.2}
+.answer .note{margin-top:10px;color:var(--bone);font-family:var(--f-text);font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.35;max-width:46em;opacity:.9}
+.judge{display:grid;gap:8px}
+.jrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:10px 12px;border-radius:var(--r);background:var(--dusk);border:1px solid var(--line)}
+.jrow .jn{font-weight:800;flex:1 1 140px;min-width:0;overflow-wrap:anywhere}
+.jrow .jn small{display:block;font-weight:700;color:var(--candle);text-transform:uppercase;letter-spacing:.1em;font-size:.7rem}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{border:1px solid var(--line);background:transparent;border-radius:999px;padding:.4em .9em;font-weight:700;font-size:.95rem}
+.seg button[aria-pressed="true"].ok{background:var(--good);border-color:var(--good);color:var(--night)}
+.seg button[aria-pressed="true"].half{background:var(--ember);border-color:var(--ember);color:var(--night)}
+.seg button[aria-pressed="true"].no{background:var(--bad);border-color:var(--bad);color:var(--night)}
+.wager{width:7.5em}
+.hint{color:var(--ash);font-size:.92rem;margin:0}
+.kbd{font-family:var(--f-num);border:1px solid var(--line);border-radius:4px;padding:0 .35em;font-size:.85em}
+
+/* ---------- Final & podium ---------- */
+.stage{max-width:1040px;margin:0 auto;display:grid;gap:22px;padding-top:10px}
+.big-cat{font-family:var(--f-display);font-size:clamp(2.8rem,8vw,6rem);line-height:.95;color:var(--ember);margin:0;text-wrap:balance}
+.podium{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:end;margin-top:20px}
+.step{display:grid;gap:8px;text-align:center}
+.step .who{font-weight:800;font-size:1.15rem;overflow-wrap:anywhere}
+.step .pts{font-family:var(--f-num);font-size:1.6rem;color:var(--candle)}
+.block{border-radius:10px 10px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:12px;
+  font-family:var(--f-display);font-size:3rem;color:var(--night);transform-origin:bottom;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.p1 .block{height:220px;background:var(--ember);animation-delay:.5s}
+.p2 .block{height:160px;background:var(--ash);animation-delay:.25s}
+.p3 .block{height:115px;background:var(--candle);animation-delay:0s}
+@keyframes rise{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.rest{display:grid;gap:6px;margin-top:8px}
+.rest div{display:flex;justify-content:space-between;padding:8px 12px;border-radius:8px;background:var(--dusk)}
+
+/* ---------- Editor ---------- */
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs .btn[aria-selected="true"]{background:var(--candle);color:var(--night);border-color:var(--candle)}
+.ecat{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:12px;background:var(--dusk)}
+.eq{display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;align-items:start;padding-top:12px;border-top:1px solid var(--line)}
+.eq .v{font-family:var(--f-num);font-size:1.3rem;color:var(--candle);padding-top:.3em}
+.eq .fields{display:grid;gap:8px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.eq .fields .wide{grid-column:1 / -1}
+
+/* ---------- Rules slides ---------- */
+.deck{min-height:calc(100dvh - 60px);display:grid;grid-template-rows:1fr auto;gap:24px}
+.slide{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,80px);align-items:center;animation:slidein .45s ease both}
+@keyframes slidein{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.slide-art{display:flex;justify-content:center;align-items:center;min-width:0}
+.slide-text{min-width:0}
+.slide-title{font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,7vw,6.5rem);line-height:.95;color:var(--ember);margin:.12em 0 .35em;text-wrap:balance}
+.slide-list{list-style:none;margin:0;padding:0;display:grid;gap:.7em;font-family:var(--f-text);font-size:clamp(1.3rem,2.5vw,2.1rem);line-height:1.3;max-width:24em}
+.slide-list li{padding-left:1.1em;position:relative}
+.slide-list li::before{content:"";position:absolute;left:0;top:.5em;width:.42em;height:.42em;border-radius:50%;background:var(--candle)}
+.slide-big{font-family:var(--f-text);font-size:clamp(1.6rem,3.4vw,2.8rem);line-height:1.25;margin:0}
+.slide-big b{color:var(--ember)}
+.glyph.hero{width:clamp(150px,24vw,320px);height:auto}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chip{padding:.35em .9em;border:1px solid var(--candle);border-radius:999px;font-weight:800;font-size:clamp(1rem,1.8vw,1.4rem)}
+.mini{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;width:min(560px,100%)}
+.mini .h{font-size:clamp(.55rem,.95vw,.78rem);font-weight:800;text-transform:uppercase;letter-spacing:.05em;text-align:center;padding:4px 2px;border-bottom:2px solid var(--candle);display:flex;align-items:flex-end;justify-content:center;min-height:3.4em;text-wrap:balance}
+.mini .v{aspect-ratio:16/10;border-radius:6px;background:linear-gradient(180deg,var(--cell-hi),var(--cell));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--f-num);color:var(--candle);font-size:clamp(.85rem,1.8vw,1.5rem)}
+.mini .v.pick{box-shadow:0 0 0 2px var(--ember),0 0 26px color-mix(in srgb,var(--candle) 50%,transparent);color:var(--ember)}
+.half-art{width:clamp(160px,22vw,280px);aspect-ratio:1;max-width:100%;border-radius:50%;border:4px dashed var(--candle);display:flex;align-items:center;justify-content:center;font-family:var(--f-num);font-size:clamp(4.5rem,11vw,8.5rem);color:var(--ember)}
+.ladder{display:grid;gap:8px;width:min(260px,100%)}
+.ladder div{display:flex;justify-content:space-between;align-items:baseline;padding:8px 16px;border-radius:8px;background:var(--dusk);border:1px solid var(--line);font-family:var(--f-num);font-size:clamp(1.2rem,2.4vw,2rem);color:var(--candle)}
+.ladder s{color:var(--ash);font-size:.7em}
+.deck-bar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:16px}
+.dots{display:flex;gap:8px;flex-wrap:wrap}
+.dot{width:12px;height:12px;border-radius:50%;border:1px solid var(--ash);background:transparent;padding:0}
+.dot.on{background:var(--candle);border-color:var(--candle)}
+
+/* ---------- Deal with the Witch: two wands, two reels ---------- */
+.reels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.reel{border:1px solid var(--witch);border-radius:16px;padding:20px 16px;display:grid;gap:14px;justify-items:center;text-align:center;min-width:0;
+  background:radial-gradient(ellipse at 50% 0%,color-mix(in srgb,var(--witch) 16%,transparent),transparent 70%),var(--dusk)}
+.reel-label{font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;color:var(--witch)}
+.reel-face{font-family:var(--f-display);font-size:clamp(3rem,8vw,6rem);line-height:1.05;color:var(--ash);min-height:1.15em;display:flex;align-items:center;justify-content:center;max-width:100%;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.reel-face.teamname{font-size:clamp(2rem,5vw,3.8rem)}
+.witch-reveal{display:grid;gap:22px}
+.witch-reveal .howto li,.witch-reveal .reel,.witch-reveal .witch-quote{animation:rise-in .5s ease both}
+.witch-reveal .howto li:nth-child(2){animation-delay:.12s}
+.witch-reveal .howto li:nth-child(3){animation-delay:.24s}
+.witch-reveal .reel{animation-delay:.36s}
+.witch-reveal .reel + .reel{animation-delay:.48s}
+.reel.spinning .reel-face{color:var(--witch);filter:blur(.5px)}
+.reel.done{box-shadow:0 0 0 2px var(--witch),0 0 46px color-mix(in srgb,var(--witch) 45%,transparent)}
+.reel.done .reel-face{color:var(--ember);animation:pop .55s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{0%{transform:scale(.55);opacity:.3}100%{transform:scale(1);opacity:1}}
+.wand-btn svg{transition:transform .2s}
+.wand-btn.waving svg{animation:wave .7s ease}
+@keyframes wave{0%{transform:rotate(0)}25%{transform:rotate(-35deg)}55%{transform:rotate(20deg)}100%{transform:rotate(0)}}
+/* Black cat: after the narrator asks, the other teams appear big and centered */
+.cat-pick{display:grid;justify-items:center;gap:clamp(16px,3vh,28px);text-align:center;padding-top:clamp(8px,2vh,24px)}
+.cat-ask{font-family:var(--f-display);font-weight:400;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1;color:var(--candle);margin:0;animation:rise-in .5s ease both}
+.cat-teams{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(12px,2vw,24px)}
+.cat-team{font-family:var(--f-display);font-size:clamp(2rem,5vw,3.8rem);line-height:1.1;padding:.25em .9em;border-radius:20px;border:2px solid var(--candle);background:var(--dusk);color:var(--bone);
+  animation:rise-in .5s ease both;transition:transform .15s,background .15s,color .15s}
+.cat-team:hover,.cat-team:focus-visible{background:var(--candle);color:var(--night);transform:translateY(-3px) scale(1.03)}
+@keyframes rise-in{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
+.witch-quote{font-family:var(--f-text);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.7rem);margin:.3em 0 0;color:var(--bone)}
+/* Step-by-step rules on the surprise screens; the current step lights up */
+.howto{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none;counter-reset:step}
+.howto li{counter-increment:step;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--dusk);
+  font-family:var(--f-text);font-size:clamp(1.05rem,1.7vw,1.35rem);line-height:1.35;opacity:.5;transition:opacity .3s,border-color .3s,box-shadow .3s}
+.howto li::before{content:counter(step);font-family:var(--f-num);font-size:1.5em;line-height:1;color:var(--candle)}
+.howto li.done{opacity:.8}
+.howto li.now{opacity:1;border-color:var(--candle);box-shadow:0 0 0 1px var(--candle),0 0 24px color-mix(in srgb,var(--candle) 22%,transparent)}
+.howto li b{color:var(--ember)}
+.howto.witch li::before{color:var(--witch)}
+.howto.witch li.now{border-color:var(--witch);box-shadow:0 0 0 1px var(--witch),0 0 24px color-mix(in srgb,var(--witch) 25%,transparent)}
+
+/* ---------- Voice ---------- */
+.vgrid{display:grid;gap:18px}
+.check{display:flex;gap:12px;align-items:flex-start;font-weight:700;cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--candle);margin-top:2px;flex:none}
+.check small{display:block;font-weight:400;color:var(--ash);margin-top:2px}
+input[type=range]{width:100%;accent-color:var(--candle)}
+.rangehead{display:flex;justify-content:space-between;align-items:baseline}
+.rangehead span{color:var(--candle)}
+.btn svg{vertical-align:-3px}
+
+@media (max-width:820px){
+  .howto{grid-template-columns:minmax(0,1fr)}
+  .reels{grid-template-columns:minmax(0,1fr)}
+  .slide{grid-template-columns:minmax(0,1fr);gap:20px}
+  .setup{grid-template-columns:minmax(0,1fr);gap:24px;padding-top:4px}
+  .eq{grid-template-columns:minmax(0,1fr)}
+  .eq .fields{grid-template-columns:minmax(0,1fr)}
+  .podium .block{font-size:2rem}
+  .p1 .block{height:150px}.p2 .block{height:110px}.p3 .block{height:80px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<div id="app"><main class="nof-static" style="max-width:760px;margin:0 auto;padding:40px 16px;font-family:Georgia,serif;color:#f2e9d8">
+<p style="text-transform:uppercase;letter-spacing:.14em;font:800 .78rem system-ui,sans-serif;color:#ab9fbd">A Halloween quiz for the whole office</p>
+<h1 style="color:#ffd58a;font-size:3rem;line-height:1;margin:.2em 0">Victoria’s Night of Frights</h1>
+<p>A free Halloween trivia game for office parties and team events, made for a big screen. Teams pick spooky questions on a game-show board, think for 30 seconds and answer. A narrator reads every question aloud.</p>
+<h2 style="color:#f2a24c">How it plays</h2>
+<ul>
+<li><strong>Two rounds</strong> of five Halloween and Canadian categories, worth 100–500 and then 200–1,000 points.</li>
+<li><strong>Black Cat in the Bag:</strong> the team that finds the cat must hand the question to another team.</li>
+<li><strong>Deal with the Witch:</strong> two magic wands pick a random price and the team that must answer.</li>
+<li><strong>Midnight:</strong> one final question with secret wagers, then a podium for the winning team.</li>
+</ul>
+<p>Works for 2–4 teams in the room and over a video call. No sign-up, no download.</p>
+<noscript><p><strong>This game needs JavaScript.</strong> Please turn it on to play.</p></noscript>
+</main></div>
+
+<script>
+/* ===================== Questions ===================== */
+const DEFAULT_Q = {
+  rounds: [
+    { name: "Round One", values: [100,200,300,400,500], categories: [
+      { name: "Monster Mash", qs: [
+        { q: "In Bram Stoker's 1897 novel, which count travels from Transylvania to England?", a: "Count Dracula", note: "Stoker's count sails to Whitby, England, looking for new victims." },
+        { q: "What is the first name of Dr. Frankenstein in Mary Shelley's novel?", a: "Victor", note: "The monster itself never gets a name." },
+        { q: "In Robert Louis Stevenson's story, Dr. Jekyll's evil alter ego is Mr. ___?", a: "Hyde", note: "Jekyll drinks a potion that turns him into the cruel Edward Hyde." },
+        { q: "According to legend, a bullet made of which metal can stop a werewolf?", a: "Silver", note: "Silver has long been linked to purity and protection from evil, and werewolf films made the silver bullet famous." },
+        { q: "Ancient Egyptians stored a mummy's organs in special containers. What are these jars called?", a: "Canopic jars", note: "The jars held the stomach, intestines, lungs and liver. The heart stayed inside the body." }
+      ]},
+      { name: "Pumpkin Patch", qs: [
+        { q: "Botanically speaking, is a pumpkin a fruit or a vegetable?", a: "A fruit", note: "It grows from a flower and holds seeds, so botanists call it a fruit." },
+        { q: "Before pumpkins, people in Ireland and Scotland carved lanterns out of which root vegetable?", a: "Turnips", note: "Irish and Scottish immigrants switched to pumpkins in North America, which were bigger and easier to carve. Rutabagas count too." },
+        { q: "In the Irish legend of \"Stingy Jack\", who did Jack trick?", a: "The Devil", note: "Jack tricked the Devil, so heaven and hell both turned him away. He wanders with a coal inside a carved turnip." },
+        { q: "What is the Spanish name for hulled pumpkin seeds, a popular snack?", a: "Pepitas", note: "Short for \"pepitas de calabaza\", meaning little squash seeds. They are popular in Mexican cooking.", special: "cat" },
+        { q: "Pumpkin pie spice usually mixes cinnamon, ginger, cloves and which spice that originally came from the Banda Islands?", a: "Nutmeg", note: "Nutmeg comes from a tree native to the Banda Islands in Indonesia, once the world's only source." }
+      ]},
+      { name: "Spooky Canada", qs: [
+        { q: "For decades, Canadian kids carried small orange boxes while trick-or-treating to collect coins for which organization?", a: "UNICEF", note: "UNICEF Canada started the program in 1955 and retired the boxes in 2006." },
+        { q: "The earliest known record of kids in English-speaking North America going door to door on Halloween is a 1911 newspaper report from which Ontario city?", a: "Kingston", note: "Kids went \"guising\" and got nuts and candy for songs and rhymes." },
+        { q: "Which wafer chocolate bar, a Canadian favourite, has a coffee-flavoured filling?", a: "Coffee Crisp", note: "Layers of vanilla wafer and foamed coffee-flavoured candy in milk chocolate, made by Nestlé in Toronto.", special: "cat" },
+        { q: "Legend says a ghostly bellman named Sam still helps guests at which castle-like hotel in the Rockies?", a: "The Fairmont Banff Springs", note: "Guests say he helps with stuck doors and directions, then vanishes. The legend is based on a real bellman." },
+        { q: "From 1999 to 2019, people in Windsor, Nova Scotia raced across a lake sitting in what?", a: "Giant hollowed-out pumpkins", note: "The Windsor Pumpkin Regatta on Lake Pisiquid used giant pumpkins grown at the Dill family farm." }
+      ]},
+      { name: "Scream Screen", qs: [
+        { q: "In John Carpenter's 1978 film \"Halloween\", what is the masked killer's name?", a: "Michael Myers", note: "He escapes a psychiatric hospital and returns to his hometown of Haddonfield, Illinois." },
+        { q: "Which 1960 Alfred Hitchcock film made a shower at the Bates Motel terrifying?", a: "Psycho", note: "Janet Leigh's shower scene is one of the most famous scenes in film history." },
+        { q: "In \"The Nightmare Before Christmas\", what is the Pumpkin King's full name?", a: "Jack Skellington", note: "The 1993 stop-motion film, produced by Tim Burton, is set in Halloween Town." },
+        { q: "In which 1982 film does a little girl turn to the TV and announce \"They're here\"?", a: "Poltergeist", note: "Little Carol Anne says it to the static on the family's TV screen." },
+        { q: "In \"Ghostbusters\" (1984), which giant creature stomps through New York in the finale?", a: "The Stay Puft Marshmallow Man", note: "Ray tries to think of something harmless, and the villain Gozer takes that shape." }
+      ]},
+      { name: "Phobias", qs: [
+        { q: "What is the fear of spiders called?", a: "Arachnophobia", note: "From the Greek word \"arachne\", spider." },
+        { q: "What is the fear of the number 13 called?", a: "Triskaidekaphobia", note: "From Greek: \"tris\" (three), \"kai\" (and), \"deka\" (ten)." },
+        { q: "\"Nomophobia\" is the fear of being without what?", a: "Your mobile phone", note: "Short for \"no mobile phone phobia\"." },
+        { q: "\"Coulrophobia\" is the fear of what?", a: "Clowns", note: "Often traced to a Greek word for a stilt-walker." },
+        { q: "What is the name for the fear of Halloween?", a: "Samhainophobia", note: "Named after Samhain, the Celtic festival that Halloween grew from.", special: "witch" }
+      ]}
+    ]},
+    { name: "Round Two", values: [200,400,600,800,1000], categories: [
+      { name: "Witches & Wizards", qs: [
+        { q: "What do witches traditionally fly on?", a: "A broomstick", note: "Old folk tales and woodcuts showed witches riding brooms to secret gatherings." },
+        { q: "In 1692, a famous series of witch trials took place in which Massachusetts town?", a: "Salem", note: "About 200 people were accused, and 20 were executed." },
+        { q: "How many witches appear at the start of Shakespeare's \"Macbeth\"?", a: "Three", note: "The Weird Sisters predict that Macbeth will become king." },
+        { q: "In \"The Wizard of Oz\" (1939), what makes the Wicked Witch of the West melt?", a: "A bucket of water", note: "Dorothy throws water to put out a fire on the Scarecrow and splashes the witch." },
+        { q: "In Slavic folklore, which witch lives in a hut that stands on chicken legs?", a: "Baba Yaga", note: "In the tales, Baba Yaga flies in a mortar and steers with a pestle." }
+      ]},
+      { name: "Candy Crush", qs: [
+        { q: "Name the three colours of classic candy corn.", a: "White, orange and yellow", note: "From the tip down: white, orange, then a yellow base." },
+        { q: "The Snickers bar was named after what kind of animal owned by the Mars family?", a: "A horse", note: "The Mars family named the bar after their favourite horse, Snickers, around 1930." },
+        { q: "The bar we now call Kit Kat was launched in 1935 under a different name. In which country was it made?", a: "England (United Kingdom)", note: "Rowntree's of York sold it as \"Chocolate Crisp\". It became Kit Kat in 1937.", special: "cat" },
+        { q: "In Canada, Smarties are candy-coated chocolates. What are Smarties in the United States?", a: "Tart sugar tablets sold in rolls", note: "Canadian Smarties are made by Nestlé. The American candy with the same name is a completely different sweet." },
+        { q: "This New Brunswick company, Canada's oldest candy maker (founded 1873), is credited with the first wrapped chocolate bar. Name it.", a: "Ganong", note: "Ganong Bros. of St. Stephen, New Brunswick, began selling its first chocolate bars in 1910." }
+      ]},
+      { name: "Creatures of the Night", qs: [
+        { q: "Which flying mammal finds its way in the dark using echolocation?", a: "The bat", note: "Bats make high-pitched calls and listen for the echoes to find insects in the dark." },
+        { q: "What is a group of owls called?", a: "A parliament", note: "Owls usually live alone, but a group of them is called a parliament." },
+        { q: "Which spider is known for a red hourglass mark on its belly?", a: "The black widow", note: "The red hourglass is on the underside of the female's abdomen." },
+        { q: "Vampire bats really exist. What do they feed on?", a: "Blood", note: "Usually from livestock and birds. They lap it up rather than suck it.", special: "cat" },
+        { q: "About how many degrees can an owl turn its head?", a: "About 270 degrees", note: "Owls have twice as many neck bones as people, so they can look over their backs." }
+      ]},
+      { name: "Around the World", qs: [
+        { q: "Which Mexican holiday on November 1–2 honours loved ones who have died?", a: "Día de los Muertos (Day of the Dead)", note: "Families build altars called ofrendas with photos, marigolds and the favourite foods of the dead." },
+        { q: "Halloween grew out of which ancient Celtic festival?", a: "Samhain", note: "Samhain marked the end of the harvest, when the line to the spirit world was believed to grow thin." },
+        { q: "Decorated sugar skulls made for the Day of the Dead have what Spanish name?", a: "Calaveras (de azúcar)", note: "\"Calavera\" is Spanish for skull. The sugar skulls often carry the name of a loved one." },
+        { q: "On what date does Britain celebrate Guy Fawkes Night with bonfires and fireworks?", a: "November 5", note: "It marks the failed Gunpowder Plot of 1605 to blow up the Houses of Parliament." },
+        { q: "The word \"Halloween\" is a shortened form of which phrase?", a: "All Hallows' Eve", note: "\"Hallow\" is an old word for saint. October 31 is the evening before All Saints' Day.", special: "witch" }
+      ]},
+      { name: "Lights, Camera, Scream", qs: [
+        { q: "In the \"Scream\" films, what is the masked killer called?", a: "Ghostface", note: "The mask is often compared to Edvard Munch's painting \"The Scream\"." },
+        { q: "How many times must you say his name to summon Beetlejuice?", a: "Three", note: "Saying \"Beetlejuice\" three times calls him into the world of the living." },
+        { q: "In \"Hocus Pocus\" (1993), what is the name of the boy turned into an immortal black cat?", a: "Thackery Binx", note: "The Sanderson sisters cursed Thackery in 1693 for trying to save his little sister." },
+        { q: "Which Stephen King novel features the clown Pennywise?", a: "It", note: "Stephen King published \"It\" in 1986. Pennywise returns to Derry, Maine, every 27 years." },
+        { q: "What is the name of the hotel in \"The Shining\"?", a: "The Overlook Hotel", note: "Jack Torrance becomes the winter caretaker of the Overlook, high in the Colorado Rockies." }
+      ]}
+    ]}
+  ],
+  final: {
+    category: "The Real Dracula",
+    q: "Bram Stoker borrowed Dracula's name from a 15th-century ruler of Wallachia who was infamous for punishing enemies on wooden stakes. What was this ruler's name?",
+    a: "Vlad the Impaler",
+    note: "Also known as Vlad III, or Vlad Dracula. \"Dracula\" means \"son of the dragon\"."
+  },
+  tiebreak: {
+    q: "In what year was Bram Stoker's novel \"Dracula\" first published?",
+    a: "1897",
+    note: "Dracula was first published in London in May 1897."
+  }
+};
+
+/* ===================== Storage ===================== */
+const KEY_S = "nof-state-v1", KEY_Q = "nof-questions-v1";
+const clone = o => JSON.parse(JSON.stringify(o));
+function load(k){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : null; } catch(e){ return null; } }
+function save(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+function drop(k){ try { localStorage.removeItem(k); } catch(e){} }
+
+const TEAM_NAMES = ["Team Pumpkins","Team Bats","Team Ghosts","Team Witches"];
+function freshState(n, names){
+  n = n || 3;
+  return {
+    screen: "setup", teamCount: n,
+    teams: (names || TEAM_NAMES).slice(0,4).map((name,i)=>({ name: name || TEAM_NAMES[i], score: 0 })),
+    round: 0, used: {}, turn: 0, q: null, final: null, sound: true, editor: null
+  };
+}
+
+let Q = load(KEY_Q) || clone(DEFAULT_Q);
+if (!Q.tiebreak) Q.tiebreak = clone(DEFAULT_Q.tiebreak);
+/* Carry corrected default questions into a copy saved in this browser, without touching the host's own edits */
+(function migrateQ(){
+  const fixes = {
+    "In which country was the Kit Kat bar first made, in 1935?": [1,1,2],
+    "The earliest known record of North American kids going door to door on Halloween is a 1911 newspaper report from which Ontario city?": [0,2,1]
+  };
+  try {
+    Q.rounds.forEach(r => r.categories.forEach(c => c.qs.forEach(q => {
+      const p = fixes[q.q]; if (!p) return;
+      const fresh = DEFAULT_Q.rounds[p[0]].categories[p[1]].qs[p[2]];
+      q.q = fresh.q; q.note = fresh.note;
+    })));
+  } catch(e){}
+  try {
+    const OLD = new Set(["Rutabagas count too.", "The Windsor Pumpkin Regatta on Lake Pisiquid.", "Ganong Bros. of St. Stephen, N.B.", "Usually from livestock and birds.", "Also known as Vlad III, or Vlad Dracula."]);
+    const byText = {};
+    DEFAULT_Q.rounds.forEach(r => r.categories.forEach(c => c.qs.forEach(q => { byText[q.q] = q.note; })));
+    const fill = (q, note) => { if (note && (!q.note || OLD.has(q.note))) q.note = note; };
+    Q.rounds.forEach(r => r.categories.forEach(c => c.qs.forEach(q => fill(q, byText[q.q]))));
+    if (Q.final && Q.final.q === DEFAULT_Q.final.q) fill(Q.final, DEFAULT_Q.final.note);
+    if (Q.tiebreak && Q.tiebreak.q === DEFAULT_Q.tiebreak.q) fill(Q.tiebreak, DEFAULT_Q.tiebreak.note);
+  } catch(e){}
+})();
+let S = load(KEY_S) || freshState(3);
+let hist = [];
+let armed = null;            // two-click confirmations
+let timer = { id: null, left: 0, total: 0, running: false };
+
+function persist(){ const s = clone(S); s.editor = null; s.voicePanel = null; s.voiceExport = null; save(KEY_S, s); }
+function persistQ(){ save(KEY_Q, Q); }
+
+/* ===================== Voice (browser speech) ===================== */
+const KEY_V = "nof-voice-v1";
+const V = Object.assign({ on: true, answers: true, waitTimer: true, slides: true, engine: "pack", name: "", rate: 0.9, pitch: 0.8 }, load(KEY_V) || {});
+function persistV(){ save(KEY_V, V); }
+const TTS = ("speechSynthesis" in window && "SpeechSynthesisUtterance" in window) ? window.speechSynthesis : null;
+let voices = [], speakSeq = 0, fallbackT = null;
+function voiceScore(v){
+  return (/natural|neural|online/i.test(v.name) ? 4 : 0) + (/en-CA/i.test(v.lang) ? 2 : 0) + (/en-US/i.test(v.lang) ? 1 : 0) + (/google/i.test(v.name) ? 1 : 0);
+}
+function loadVoices(){
+  if (!TTS) return;
+  try { voices = TTS.getVoices().filter(v => /^en/i.test(v.lang)).sort((a,b)=>voiceScore(b)-voiceScore(a)); } catch(e){ voices = []; }
+}
+function pickVoice(){
+  if (!voices.length) loadVoices();
+  return voices.find(v => v.name === V.name) || voices[0] || null;
+}
+if (TTS){
+  loadVoices();
+  try { TTS.addEventListener("voiceschanged", () => { loadVoices(); if (S.voicePanel) render(); }); } catch(e){}
+}
+function stopSpeech(){ speakSeq++; clearTimeout(fallbackT); if (curAudio){ try { curAudio.pause(); } catch(e){} curAudio = null; } try { if (TTS) TTS.cancel(); } catch(e){} }
+function say(text, onDone, opts){
+  opts = opts || {};
+  stopSpeech();
+  const done = typeof onDone === "function" ? onDone : null;
+  const file = packFile(String(text || "").trim());
+  if ((!TTS && !file) || (!V.on && !opts.force) || !text){ if (done) done(); return; }
+  const my = speakSeq;
+  let finished = false;
+  const finish = () => { if (finished || my !== speakSeq) return; finished = true; clearTimeout(fallbackT); if (done) done(); };
+  const words = String(text).split(/\s+/).length;
+  const browser = () => {
+    if (my !== speakSeq) return;
+    if (!TTS){ finish(); return; }
+    try {
+      const u = new SpeechSynthesisUtterance(text);
+      const v = pickVoice();
+      if (v){ u.voice = v; u.lang = v.lang; } else u.lang = "en-CA";
+      u.rate = V.rate; u.pitch = V.pitch;
+      u.onend = finish; u.onerror = finish;
+      TTS.speak(u);
+      fallbackT = setTimeout(finish, 5000 + words * 450 / V.rate);   // safety net if the browser never reports the end
+    } catch(e){ finish(); }
+  };
+  setTimeout(() => {
+    if (my !== speakSeq) return;
+    if (!file){ browser(); return; }
+    try {
+      const a = new Audio(PACK.base + file); curAudio = a;
+      a.onended = finish;
+      a.onerror = () => { if (curAudio === a) curAudio = null; browser(); };
+      const p = a.play(); if (p && p.catch) p.catch(() => { if (curAudio === a) curAudio = null; browser(); });
+      fallbackT = setTimeout(finish, 20000 + words * 700);
+    } catch(e){ browser(); }
+  }, opts.delay || 60);
+}
+const SPEAK_SVG = `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
+
+/* ===================== Narrator pack (ElevenLabs audio files) =====================
+   audio/manifest.json maps each spoken line (exact text) to an MP3 file in audio/.
+   Lines without a file fall back to the browser voice. */
+const LINES = {
+  test: "Welcome to Victoria's Night of Frights. Pick a question... if you dare.",
+  welcome: "Welcome to Victoria's Night of Frights! Tonight, our teams battle for glory, and for prizes. Here is how it works.",
+  ready: "Ready? The first team, pick a question. Good luck, and try not to scream.",
+  rules: "Rules of the game. Pick a question from the board. Beware the black cat and the witch. Survive two rounds and the midnight finale.",
+  cat: "Black cat in the bag! The team that found it must give this question to another team.",
+  catWho: "Who gets the cat?",
+  witchTitle: "Deal with the Witch!",
+  witch: "And now, with one of you, I shall make a deal! My first wand picks the price. My second wand picks the team that must answer. Answer right, and win it. Answer wrong, and lose it.",
+  tie: "It's a tie! Time for a tiebreaker."
+};
+const roundLine = r => r.name + ". The stakes just went up.";
+const midnightLine = () => "Midnight has come. The final category is: " + Q.final.category + ". Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more.";
+const winnerLine = name => name + " survive the night!";
+const priceLine = v => "The price: " + v + " points!";
+const dealLine = name => name + ", the deal is yours!";
+const answerLine = x => "The answer is: " + x.a + (x.note ? ". " + x.note : "");
+/* What the narrator actually receives: the same words plus Eleven v4 audio tags for mood */
+function ttsText(t){
+  const fixed = {
+    [LINES.test]: "[mischievously] Welcome to Victoria's Night of Frights. Pick a question... [whispers] if you dare.",
+    [LINES.welcome]: "[mischievously] Welcome to Victoria's Night of Frights! Tonight, our teams battle for glory... and for prizes. [whispers] Here is how it works.",
+    [LINES.ready]: "Ready? The first team, pick a question. Good luck... and try not to scream. [laughs]",
+    [LINES.rules]: "[whispers] Rules of the game. [mischievously] Pick a question from the board. Beware the black cat... and the witch. Survive two rounds... and the midnight finale.",
+    [LINES.cat]: "[mischievously] Black cat in the bag! The team that found it... must give this question to another team.",
+    [LINES.catWho]: "[mischievously] So... who gets the cat?",
+    [LINES.witchTitle]: "[whispers] Deal... [mischievously] with the Witch!",
+    [LINES.witch]: "[whispers] And now... [mischievously] with one of you... I shall make a deal! [laughs] My first wand picks the price. My second wand picks the team that must answer. Answer right... and win it. Answer wrong... [whispers] and lose it.",
+    [LINES.tie]: "[gasps] It's a tie! Time for a tiebreaker."
+  };
+  if (fixed[t]) return fixed[t];
+  if (t === midnightLine()) return "[whispers] " + t;
+  if (/ survive the night!$/.test(t)) return "[excited] " + t + " [applause]";
+  if (/^The price: \d+ points!$/.test(t)) return t.replace("The price: ", "[mischievously] The price... ");
+  if (/, the deal is yours!$/.test(t)) return t.replace(", the deal is yours!", "... the deal is yours! [laughs]");
+  if (/\. The stakes just went up\.$/.test(t)) return t.replace("The stakes just went up.", "[mischievously] The stakes just went up.");
+  return t;
+}
+function fnv(str){ let h = 0x811c9dc5; for (let k = 0; k < str.length; k++){ h ^= str.charCodeAt(k); h = Math.imul(h, 0x01000193) >>> 0; } return ("0000000" + h.toString(16)).slice(-8); }
+/* Every line the narrator can say with the current questions and team names */
+function voiceLines(){
+  const out = [], seen = new Set();
+  const add = t => { t = String(t || "").trim(); if (!t || seen.has(t)) return; seen.add(t); out.push({ file: "l-" + fnv(t) + ".mp3", text: t, tts: ttsText(t) }); };
+  add(LINES.test);
+  ["intro", "round2", "midnight"].forEach(d => slides(d).forEach(sl => add(slideSpeech(sl))));
+  add(LINES.cat); add(LINES.catWho); add(LINES.witchTitle); add(LINES.witch); add(LINES.tie);
+  Q.rounds.forEach((r, ri) => {
+    if (ri > 0) add(roundLine(r));
+    r.categories.forEach(c => c.qs.forEach(q => { add(q.q); add(answerLine(q)); }));
+  });
+  add(midnightLine()); add(Q.final.q); add(answerLine(Q.final));
+  add(tbQ().q); add(answerLine(tbQ()));
+  S.teams.forEach(t => add(winnerLine(t.name)));
+  [...new Set(Q.rounds.flatMap(r => r.values))].sort((a,b) => a - b).forEach(v => add(priceLine(v)));
+  S.teams.forEach(t => add(dealLine(t.name)));
+  return out;
+}
+let PACK = null, curAudio = null;
+function loadPack(){
+  try {
+    fetch("audio/manifest.json", { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : null)
+      .then(m => { if (m && m.lines){ PACK = { base: "audio/", lines: m.lines, voice: m.voice || "", model: m.model || "" }; if (S.voicePanel) render(); } })
+      .catch(() => {});
+  } catch(e){}
+}
+const packFile = t => (V.engine !== "browser" && PACK && PACK.lines) ? (PACK.lines[t] || null) : null;
+
+/* ===================== Sound ===================== */
+let ac = null;
+function audio(){
+  if (!S.sound) return null;
+  try { if (!ac) ac = new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === "suspended") ac.resume(); return ac; } catch(e){ return null; }
+}
+function tone(f, dur, type, vol, delay, glideTo){
+  const c = audio(); if (!c) return;
+  const t0 = c.currentTime + (delay||0);
+  const o = c.createOscillator(), g = c.createGain();
+  o.type = type || "sine"; o.frequency.setValueAtTime(f, t0);
+  if (glideTo) o.frequency.exponentialRampToValueAtTime(glideTo, t0 + dur);
+  g.gain.setValueAtTime(0.0001, t0);
+  g.gain.exponentialRampToValueAtTime(vol || .15, t0 + .02);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+  o.connect(g).connect(c.destination); o.start(t0); o.stop(t0 + dur + .05);
+}
+const SFX = {
+  open(){ tone(196,.5,"triangle",.12); tone(233,.5,"triangle",.1,.12); tone(294,.8,"triangle",.1,.24); },
+  reveal(){ tone(440,.25,"sine",.14); tone(660,.45,"sine",.12,.15); },
+  good(){ [523,659,784,1047].forEach((f,i)=>tone(f,.3,"triangle",.13,i*.09)); },
+  bad(){ tone(180,.6,"sawtooth",.07,0,90); },
+  tick(){ tone(880,.08,"square",.04); },
+  end(){ tone(110,1.6,"triangle",.2); tone(116,1.6,"sine",.1); },
+  cat(){ tone(820,.45,"sine",.12,0,520); tone(700,.35,"sine",.08,.35,460); },
+  witch(){ [392,370,349,330].forEach((f,i)=>tone(f,.35,"sawtooth",.04,i*.13)); },
+  tick2(p){ tone(480 + 760 * p, .05, "triangle", .07); },
+  wand(){ tone(300, .45, "sawtooth", .03, 0, 1400); tone(1800, .3, "sine", .03, .28, 2600); },
+  magic(){ [659,784,988,1319,1568].forEach((f,i)=>tone(f,.5,"sine",.09,i*.07)); tone(2637,.9,"sine",.02,.35); }
+};
+
+/* ===================== Midnight thinking music =====================
+   An original music-box tune over a descending "lament" bass, a low drone and a clock tick.
+   Plays only while the final round's timer runs; follows the Sound on/off switch. */
+const midi = m => 440 * Math.pow(2, (m - 69) / 12);
+const finalAsking = () => (S.screen === "final" && !!S.final && S.final.stage === "ask") || (S.screen === "tiebreak" && !!S.tb && S.tb.stage === "ask");
+const M_CHORDS = [[69,72,76],[68,71,76],[67,72,76],[66,69,74],[65,69,74],[64,68,71],[65,69,74],[64,68,74]];
+const M_BASS = [45,44,43,42,41,40,41,40];
+const M_STEP = 60 / 104 / 2;   // eighth notes at 104 bpm
+const Music = {
+  playing: false, id: null, step: 0, next: 0, master: null, nodes: [],
+  note(f, t, dur, type, vol){
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.type = type; o.frequency.setValueAtTime(f, t);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(vol, t + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g).connect(this.master); o.start(t); o.stop(t + dur + 0.05);
+  },
+  start(){
+    const c = audio(); if (!c || this.playing) return;
+    this.playing = true; this.step = 0; this.next = c.currentTime + 0.1;
+    const m = this.master = c.createGain();
+    m.gain.setValueAtTime(0.0001, c.currentTime);
+    m.gain.exponentialRampToValueAtTime(0.6, c.currentTime + 1.5);
+    m.connect(c.destination);
+    const o1 = c.createOscillator(), o2 = c.createOscillator(), f = c.createBiquadFilter(), g = c.createGain();
+    const lfo = c.createOscillator(), lg = c.createGain();
+    o1.type = o2.type = "sawtooth"; o1.frequency.value = 55; o2.frequency.value = 55.4;
+    f.type = "lowpass"; f.frequency.value = 320; g.gain.value = 0.045;
+    lfo.frequency.value = 0.15; lg.gain.value = 120;
+    o1.connect(f); o2.connect(f); f.connect(g); g.connect(m); lfo.connect(lg); lg.connect(f.frequency);
+    o1.start(); o2.start(); lfo.start();
+    this.nodes = [o1, o2, lfo];
+    this.id = setInterval(() => this.schedule(), 25);
+  },
+  schedule(){
+    if (!this.playing || !ac) return;
+    while (this.next < ac.currentTime + 0.12){ this.play(this.step, this.next); this.next += M_STEP; this.step++; }
+  },
+  play(s, t){
+    const bar = Math.floor(s / 8) % 8, pos = s % 8, loop = Math.floor(s / 64);
+    const ch = M_CHORDS[bar], idx = [0,1,2,3,2,1,0,1][pos];
+    const n = idx === 3 ? ch[0] + 12 : ch[idx];
+    this.note(midi(n), t, 1.4, "sine", 0.09);          // music box
+    this.note(midi(n) * 3, t, 0.5, "sine", 0.012);      // bell shimmer
+    if (pos === 0 || pos === 4){
+      this.note(midi(M_BASS[bar]), t, pos === 0 ? 1.1 : 0.6, "triangle", 0.16);
+      this.note(midi(M_BASS[bar] + 12), t, 0.8, "triangle", 0.05);
+    }
+    if (pos % 2 === 0) this.note(pos % 4 === 0 ? 1900 : 1500, t, 0.03, "square", 0.01);   // tick, tock
+    if (loop >= 1 && pos === 0) this.note(midi(ch[2] + 12), t, 2.2, "triangle", 0.03); // high voice from the second pass
+  },
+  stop(){
+    if (!this.playing) return;
+    this.playing = false; clearInterval(this.id);
+    const m = this.master, nodes = this.nodes;
+    try { const now = ac.currentTime; m.gain.cancelScheduledValues(now); m.gain.setValueAtTime(Math.max(m.gain.value, 0.0001), now); m.gain.exponentialRampToValueAtTime(0.0001, now + 0.6); } catch(e){}
+    setTimeout(() => { try { nodes.forEach(o => o.stop()); m.disconnect(); } catch(e){} }, 700);
+  }
+};
+
+/* ===================== Helpers ===================== */
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const teams = () => S.teams.slice(0, S.teamCount);
+const R = () => Q.rounds[S.round];
+const key = (r,c,i) => r + "-" + c + "-" + i;
+function remaining(){ let n=0; R().categories.forEach((c,ci)=>c.qs.forEach((_,i)=>{ if(!S.used[key(S.round,ci,i)]) n++; })); return n; }
+function pushHist(){ hist.push(JSON.stringify({ teams:S.teams, used:S.used, turn:S.turn })); if (hist.length>60) hist.shift(); }
+function undo(){ const h = hist.pop(); if(!h) return; const o = JSON.parse(h); S.teams=o.teams; S.used=o.used; S.turn=o.turn; persist(); render(); }
+function fmt(n){ return (n<0?"−":"") + Math.abs(n).toLocaleString("en-CA"); }
+const maxWager = t => Math.max(Math.floor(Math.max(0, t.score) / 2), 500);   // final wager cap: half of the score, but never less than 500
+
+const CAT_SVG = `<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true"><path fill="var(--candle)" d="M14 10 L24 24 L40 24 L50 10 L52 34 C52 46 43 54 32 54 C21 54 12 46 12 34 Z"/><ellipse cx="25" cy="36" rx="3.4" ry="5" fill="var(--night)"/><ellipse cx="39" cy="36" rx="3.4" ry="5" fill="var(--night)"/><path d="M30 44 L34 44 L32 46.5 Z" fill="var(--night)"/></svg>`;
+const HAT_SVG = `<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true"><path fill="var(--witch)" d="M34 4 C30 14 26 26 22 40 L44 40 C42 30 41 22 44 14 C40 16 37 12 34 4 Z"/><ellipse cx="32" cy="44" rx="28" ry="7" fill="var(--witch)"/><rect x="22" y="34" width="22" height="5" fill="var(--candle)"/></svg>`;
+const MOON_SVG = `<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true"><path fill="var(--ember)" d="M40 8 A26 26 0 1 0 56 44 A20 20 0 1 1 40 8 Z"/></svg>`;
+
+/* ===================== Render ===================== */
+const app = document.getElementById("app");
+function render(){
+  let html = "";
+  if (S.screen === "setup") html = viewSetup();
+  else if (S.screen === "rules") html = viewRules();
+  else if (S.screen === "board") html = viewBoard() + (S.q ? viewQuestion() : "");
+  else if (S.screen === "final") html = viewFinal();
+  else if (S.screen === "podium") html = viewPodium();
+  else if (S.screen === "tiebreak") html = viewTiebreak();
+  if (S.editor) html += viewEditor();
+  if (S.voicePanel) html += viewVoice();
+  app.innerHTML = html;
+  if (S.q && S.q.stage === "ask") paintTimer();
+  if (S.screen === "final" && S.final && S.final.stage === "ask") paintTimer();
+  if (S.screen === "tiebreak" && S.tb && S.tb.stage === "ask") paintTimer();
+}
+
+/* ===================== Rules slides ===================== */
+const hero = svg => svg.replace('class="glyph"', 'class="glyph hero"');
+const PUMPKIN_SVG = `<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true"><path d="M30 12c0-3 2-6 5-7l2 3c-2 1-3 2-3 4z" fill="var(--good)"/><ellipse cx="32" cy="37" rx="27" ry="22" fill="var(--candle)"/><path d="M32 15c-6 0-10 10-10 22s4 22 10 22 10-10 10-22-4-22-10-22z" fill="none" stroke="var(--night)" stroke-opacity=".3" stroke-width="2"/><path d="M17 31h8l-4-7z M39 31h8l-4-7z" fill="var(--night)"/><path d="M18 42c4 7 24 7 28 0l-4 2-3-3-3 3-4-3-4 3-3-3-3 3z" fill="var(--night)"/></svg>`;
+const GHOST_SVG = `<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true"><path fill="var(--bone)" d="M32 6c-12 0-20 9-20 21v29l6-5 6 5 4-5 4 5 4-5 4 5 6-5 6 5V27C52 15 44 6 32 6z"/><ellipse cx="25" cy="28" rx="3.5" ry="5" fill="var(--night)"/><ellipse cx="39" cy="28" rx="3.5" ry="5" fill="var(--night)"/><ellipse cx="32" cy="39" rx="3" ry="4" fill="var(--night)"/></svg>`;
+const WAND_SVG = `<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 20 15 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M17 3l1.2 2.8L21 7l-2.8 1.2L17 11l-1.2-2.8L13 7l2.8-1.2z" fill="currentColor"/></svg>`;
+let witchSpin = 0;
+function rnd(n){ try { const a = new Uint32Array(1); crypto.getRandomValues(a); return a[0] % n; } catch(e){ return Math.floor(Math.random() * n); } }
+/* Spin a reel through the labels, slowing down, and stop on labels[target] */
+function spinReel(id, labels, target, onDone){
+  const my = ++witchSpin;
+  const el = document.getElementById(id), box = el && el.closest(".reel");
+  let reduce = false; try { reduce = matchMedia("(prefers-reduced-motion: reduce)").matches; } catch(e){}
+  const finish = () => { if (my !== witchSpin) return; witchSpin = 0; onDone(); };
+  if (!el || reduce){ finish(); return; }
+  box.classList.add("spinning");
+  const n = labels.length, steps = 24 + rnd(n), start = ((target - steps) % n + n) % n;
+  let k = 0, delay = 45;
+  const tick = () => {
+    if (my !== witchSpin) return;
+    el.textContent = labels[(start + k) % n];
+    SFX.tick2(k / steps);
+    if (k++ >= steps){ box.classList.remove("spinning"); setTimeout(finish, 120); return; }
+    delay *= 1.09;
+    setTimeout(tick, Math.min(delay, 420));
+  };
+  tick();
+}
+function waveWand(btn){ try { btn.classList.remove("waving"); void btn.offsetWidth; btn.classList.add("waving"); } catch(e){} }
+const CANDLE_SVG = `<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6c4 6 6 9 6 13a6 6 0 0 1-12 0c0-4 2-7 6-13z" fill="var(--candle)"/><path d="M32 12c2 3 3 5 3 7a3 3 0 0 1-6 0c0-2 1-4 3-7z" fill="var(--ember)"/><rect x="26" y="26" width="12" height="28" rx="2" fill="var(--bone)"/><path d="M27 30c3 2 4 6 3 10" stroke="var(--ash)" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="18" y="54" width="28" height="5" rx="2.5" fill="var(--ash)"/></svg>`;
+const TIMER_ART = `<svg class="glyph hero" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="var(--line)" stroke-width="10"/><circle cx="60" cy="60" r="50" fill="none" stroke="var(--candle)" stroke-width="10" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="80" transform="rotate(-90 60 60)"/><text x="60" y="73" text-anchor="middle" font-family="Oswald, 'Arial Narrow', sans-serif" font-size="38" fill="var(--bone)">30</text></svg>`;
+
+function slides(deck){
+  const T = teams(), r1 = Q.rounds[0], r2 = Q.rounds[1] || r1;
+  const first = (T[S.turn] || T[0]).name;
+  const names = T.map(t=>t.name);
+  const nameList = names.length > 1 ? names.slice(0,-1).join(", ") + " and " + names[names.length-1] : names[0];
+  const mini = `<div class="mini" aria-hidden="true">${r1.categories.map(c=>`<div class="h">${esc(c.name)}</div>`).join("")}${r1.values.map((v,i)=>r1.categories.map((c,ci)=>`<div class="v ${ci===2&&i===2?"pick":""}">${v}</div>`).join("")).join("")}</div>`;
+  const ladder = `<div class="ladder" aria-hidden="true">${r2.values.map((v,i)=>`<div><s>${fmt(r1.values[i])}</s><span>${fmt(v)}</span></div>`).join("")}</div>`;
+  const list = [
+    { eyebrow: "Welcome to", title: "Victoria’s Night of Frights", art: hero(PUMPKIN_SVG),
+      body: `<p class="slide-big">Two rounds of spooky trivia, two cursed surprises and one last wager at midnight.</p><div class="chips">${T.map(t=>`<span class="chip">${esc(t.name)}</span>`).join("")}</div>`,
+      say: LINES.welcome },
+    { eyebrow: "How to play", title: "Rules of the game", art: hero(CANDLE_SVG),
+      bullets: ["Pick a question from the board.", "Beware the black cat and the witch.", "Survive two rounds and the midnight finale."],
+      say: LINES.rules },
+    { eyebrow: "The board", title: "Pick a question", art: mini,
+      bullets: ["Five categories with five questions each.", "The higher the value, the harder the question.", "Teams take turns choosing a cell."] },
+    { eyebrow: "Answering", title: "30 seconds", art: TIMER_ART,
+      bullets: ["The question is read aloud, then the clock starts.", "Only the team that picked it may answer. Everyone else stays quiet.", "Right: win the points. Wrong: lose them."] },
+    { eyebrow: "Surprise", title: "Black Cat in the Bag", art: hero(CAT_SVG),
+      bullets: ["Find the black cat and you must give the question away.", "You choose which team gets it.", "That team answers for the full value, right or wrong."] },
+    { eyebrow: "Surprise", title: "Deal with the Witch", art: hero(HAT_SVG),
+      bullets: ["The witch waves two magic wands.", `The first wand picks the price: ${fmt(r1.values[0])} to ${fmt(r1.values[r1.values.length-1])} points, or ${fmt(r2.values[0])} to ${fmt(r2.values[r2.values.length-1])} in Round Two.`, "The second wand picks the team that must answer. Right: win the points. Wrong: lose them."] },
+    { eyebrow: "Round Two", title: "Double trouble", art: ladder,
+      bullets: ["Five new categories.", `Every value is doubled: ${fmt(r2.values[0])} to ${fmt(r2.values[r2.values.length-1])}.`, "Same rules, bigger risks."] },
+    { eyebrow: "The finale", title: "Midnight", art: hero(MOON_SVG),
+      bullets: ["One final question. You see only the category first.", "Secretly wager up to half of your score. Low on points? You can always bet up to 500.", "You get 60 seconds. Right: add your wager. Wrong: lose it."] },
+    { eyebrow: "House rules", title: "Play fair", art: hero(GHOST_SVG),
+      bullets: ["No phones and no Googling.", "The host has the final word on close answers.", "Only one team survives the night and wins."] },
+    { eyebrow: "Let's begin", title: "Ready?", art: hero(PUMPKIN_SVG),
+      body: `<p class="slide-big"><b>${esc(first)}</b> picks the first question.</p>`,
+      say: LINES.ready }
+  ];
+  /* Three decks: the intro rules, one slide before Round Two, one slide before the final */
+  deck = deck || S.deck || "intro";
+  if (deck === "round2") return list.filter(sl => sl.title === "Double trouble");
+  if (deck === "midnight") return list.filter(sl => sl.title === "Midnight");
+  return list.filter(sl => !["Black Cat in the Bag", "Deal with the Witch", "Double trouble", "Midnight"].includes(sl.title));
+}
+function slideSpeech(sl){ return sl.say || (sl.title + ". " + (sl.bullets || []).join(" ")); }
+function readSlide(force){
+  const list = slides(), sl = list[Math.min(S.slide || 0, list.length - 1)];
+  if (force) say(slideSpeech(sl), null, { force: true, delay: 300 });
+  else if (V.slides && V.on) say(slideSpeech(sl), null, { delay: 450 });
+  else stopSpeech();
+}
+function viewRules(){
+  const list = slides(), i = Math.min(S.slide || 0, list.length - 1), sl = list[i];
+  const last = i === list.length - 1, deck = S.deck || "intro";
+  const finishLabel = deck === "round2" ? "Start " + esc((Q.rounds[S.round + 1] || {}).name || "the next round") : deck === "midnight" ? "Reveal the final category" : (S.rulesReturn ? "Back to the game" : "Start the game");
+  return `<div class="deck">
+    <div class="slide">
+      <div class="slide-art">${sl.art || ""}</div>
+      <div class="slide-text">
+        <div class="eyebrow">${esc(sl.eyebrow)}</div>
+        <h1 class="slide-title">${esc(sl.title)}</h1>
+        ${sl.bullets ? `<ul class="slide-list">${sl.bullets.map(b=>`<li>${esc(b)}</li>`).join("")}</ul>` : ""}
+        ${sl.body || ""}
+      </div>
+    </div>
+    <div class="deck-bar">
+      <div class="dots" ${list.length < 2 ? "hidden" : ""} role="group" aria-label="Slide ${i+1} of ${list.length}">${list.map((_,k)=>`<button class="dot ${k===i?"on":""}" data-act="sgo" data-k="${k}" aria-label="Go to slide ${k+1}" ${k===i?'aria-current="step"':""}></button>`).join("")}</div>
+      <div class="tools">
+        <button class="btn small ghost" data-act="sread">${SPEAK_SVG} Read slide</button>
+        <button class="btn small ghost" data-act="sauto" aria-pressed="${V.slides}">Auto-read ${V.slides ? "on" : "off"}</button>
+        ${S.rulesReturn || deck !== "intro" ? "" : `<button class="btn small ghost" data-act="sskip">Skip to the game</button>`}
+        ${list.length > 1 ? `<button class="btn" data-act="sprev" ${i===0?"disabled":""}>Back</button>` : ""}
+        <button class="btn primary" data-act="snext">${last ? finishLabel : "Next"} <span class="kbd">→</span></button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function viewSetup(){
+  const hasGame = Object.keys(S.used).length > 0 || teams().some(t=>t.score!==0);
+  return `
+  <div class="setup">
+    <section>
+      <div class="eyebrow">A Halloween quiz for the whole office</div>
+      <h1 class="title"><span class="byline">Victoria’s</span>Night of Frights</h1>
+      <p class="lede">Two rounds of spooky trivia, two cursed surprises on the board, and one last wager at midnight. Teams pick a question, think it over for 30 seconds, and answer.</p>
+      <ul class="rules">
+        <li>${MOON_SVG}<div><b>Pick and answer</b><p>Teams take turns choosing a cell. The team that picks answers it. A wrong answer costs the cell's value. Other teams stay quiet.</p></div></li>
+        <li>${CAT_SVG}<div><b>Black Cat in the Bag</b><p>The team that finds the black cat must hand the question to another team. That team answers for the full value, win or lose.</p></div></li>
+        <li>${HAT_SVG}<div><b>Deal with the Witch</b><p>The witch waves two wands. The first picks a random price, the second picks the team that must answer. Right: win it. Wrong: lose it.</p></div></li>
+        <li>${MOON_SVG}<div><b>Midnight</b><p>Round Two doubles every value. The game ends with one final question: each team secretly wagers up to half of its score, or up to 500 if that is more.</p></div></li>
+      </ul>
+    </section>
+    <section class="panel" aria-labelledby="teams-h">
+      <div class="eyebrow" id="teams-h">Teams</div>
+      <div class="teams-form">
+        <div class="count-row" role="group" aria-label="Number of teams">
+          <span class="hint">How many teams?</span>
+          ${[2,3,4].map(n=>`<button class="btn small" data-act="count" data-n="${n}" aria-pressed="${S.teamCount===n}">${n}</button>`).join("")}
+        </div>
+        ${teams().map((t,i)=>`
+          <div class="field"><label for="tn${i}">Team ${i+1}</label>
+          <input type="text" id="tn${i}" data-team="${i}" value="${esc(t.name)}" maxlength="28"></div>`).join("")}
+      </div>
+      <div class="actions">
+        <button class="btn primary" data-act="start">${hasGame ? "Start a new game" : "Start the game"}</button>
+        ${hasGame ? `<button class="btn" data-act="resume">Resume saved game</button>` : ""}
+        <button class="btn ghost" data-act="edit">Edit questions</button>
+        <button class="btn ghost" data-act="voice">${SPEAK_SVG} Voice settings</button>
+      </div>
+    </section>
+  </div>`;
+}
+
+function viewScores(){
+  return `<div class="scores">${teams().map((t,i)=>`
+    <div class="team ${S.screen==="board" && S.turn===i ? "turn":""}">
+      <div class="tname">${esc(t.name)}${S.screen==="board" && S.turn===i ? `<div class="tag">Picking now</div>`:""}</div>
+      <div class="score num ${t.score<0?"neg":""}">${fmt(t.score)}</div>
+      <div class="adj" aria-label="Adjust ${esc(t.name)} score">
+        <button data-act="adj" data-i="${i}" data-d="-100" aria-label="Minus 100">−</button>
+        <button data-act="adj" data-i="${i}" data-d="100" aria-label="Plus 100">+</button>
+      </div>
+    </div>`).join("")}</div>`;
+}
+
+function viewBoard(){
+  const r = R(), left = remaining();
+  const isLast = S.round === Q.rounds.length - 1;
+  const finalDone = !!S.final && S.final.stage === "done";
+  const nextLabel = finalDone ? "Back to the standings" : isLast ? "Go to Midnight" : "Go to " + Q.rounds[S.round+1].name;
+  const confirmNext = armed === "next";
+  return `<div class="board-screen">
+  <div class="topbar">
+    <div>
+      <div class="eyebrow">Victoria’s Night of Frights</div>
+      <h1 class="round-name">${esc(r.name)}</h1>
+    </div>
+    <div class="tools">
+      <button class="btn small" data-act="undo" ${hist.length?"":"disabled"}>Undo</button>
+      <button class="btn small" data-act="sound" aria-pressed="${S.sound}">${S.sound?"Sound on":"Sound off"}</button>
+      <button class="btn small" data-act="voice">${SPEAK_SVG} Voice ${V.on && TTS ? "on" : "off"}</button>
+      <button class="btn small ghost" data-act="rules">Rules</button>
+      <button class="btn small ghost" data-act="edit">Edit questions</button>
+      <button class="btn small ghost ${armed==="new"?"warn":""}" data-act="new">${armed==="new" ? "Click again to end this game" : "New game"}</button>
+    </div>
+  </div>
+  ${viewScores()}
+  <div class="board-wrap">
+    <div class="board" aria-label="${esc(r.name)} board">
+      ${r.categories.map(c=>`<div class="cat">${esc(c.name)}</div>`).join("")}
+      ${r.values.map((v,i)=> r.categories.map((c,ci)=>{
+        const used = S.used[key(S.round,ci,i)];
+        return `<button class="cell ${used?"used":""}" data-act="open" data-c="${ci}" data-i="${i}" ${used?`aria-label="${esc(c.name)} ${v}, already played" disabled`:`aria-label="${esc(c.name)} for ${v}"`}>${used?"":v}</button>`;
+      }).join("")).join("")}
+    </div>
+  </div>
+  <div class="board-foot">
+    <span>${left} of 25 questions left · Use − and + on a team card to fix a score · <button class="btn small ghost" data-act="turn">Skip to next team</button></span>
+    <button class="btn ${left===0?"primary":""} ${confirmNext?"warn":""}" data-act="next">${confirmNext ? `${left} questions still open. Click again to move on` : nextLabel}</button>
+  </div>
+  </div>`;
+}
+
+function timerHTML(){
+  return `<div class="timer" id="timer">
+    <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="34" fill="none" stroke="var(--line)" stroke-width="7"/>
+    <circle id="ring" cx="40" cy="40" r="34" fill="none" stroke="var(--candle)" stroke-width="7" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="0"/></svg>
+    <span class="t" id="tleft" aria-live="off">${timer.left}</span>
+    <button class="btn small" data-act="tpause">${timer.waiting?"Start now":timer.running?"Pause":"Resume"}</button>
+    <button class="btn small ghost" data-act="trestart">Restart</button>
+  </div>`;
+}
+
+function viewQuestion(){
+  const q = S.q, r = R(), cat = r.categories[q.c], item = cat.qs[q.i];
+  const T = teams();
+  const stakes = q.special === "witch" && q.bid ? q.bid : q.value;
+  let body = "";
+  if (q.stage === "intro" && q.special === "cat"){
+    body = `<div class="special blackcat">${CAT_SVG}<div><h3>Black Cat in the Bag</h3>
+      <p>${esc(T[q.picker].name)} found the black cat and must hand this question to another team. That team answers for ${q.value}, right or wrong.</p></div></div>
+      ${q.catAsk ? `<div class="cat-pick">
+        <h3 class="cat-ask">Who gets the cat?</h3>
+        <div class="cat-teams">${T.map((t,i)=>({ t, i })).filter(o => o.i !== q.picker).map((o,k)=>`<button class="cat-team" style="animation-delay:${200 + k * 140}ms" data-act="catto" data-i="${o.i}">${esc(o.t.name)}</button>`).join("")}</div>
+      </div>` : ""}`;
+  } else if (q.stage === "intro" && q.special === "witch"){
+    const w = q.w || (q.w = { price: null, team: null });
+    const spinning = !!witchSpin;
+    body = `<div class="special witch">${HAT_SVG}<div><h3>Deal with the Witch</h3>
+      ${q.witchAsk ? `<p class="witch-quote" style="animation:rise-in .5s ease both">“And now, with one of you, I shall make a deal!”</p>` : ""}</div></div>
+      ${q.witchAsk ? `<div class="witch-reveal">
+      <ol class="howto witch">
+        <li class="${w.price != null ? "done" : "now"}"><span><b>First wand</b> picks the price: ${fmt(R().values[0])} to ${fmt(R().values[R().values.length - 1])} points.</span></li>
+        <li class="${w.team != null ? "done" : w.price != null ? "now" : ""}"><span><b>Second wand</b> picks the team that must answer. Any team can be chosen.</span></li>
+        <li class="${w.team != null ? "now" : ""}"><span>Right: <b>win</b> the price. Wrong: <b>lose</b> it. No passing.</span></li>
+      </ol>
+      <div class="reels">
+        <div class="reel ${w.price != null ? "done" : ""}">
+          <div class="reel-label">First wand · The price</div>
+          <div class="reel-face" id="reel-price" aria-live="polite">${w.price != null ? fmt(w.price) : "?"}</div>
+          <button class="btn primary wand-btn" data-act="wand1" ${w.price != null || spinning ? "disabled" : ""}>${WAND_SVG} Wave the first wand</button>
+        </div>
+        <div class="reel ${w.team != null ? "done" : ""}">
+          <div class="reel-label">Second wand · The team</div>
+          <div class="reel-face teamname" id="reel-team" aria-live="polite">${w.team != null ? esc(T[w.team].name) : "?"}</div>
+          <button class="btn primary wand-btn" data-act="wand2" ${w.price == null || w.team != null || spinning ? "disabled" : ""}>${WAND_SVG} Wave the second wand</button>
+        </div>
+      </div>
+      ${w.price != null && w.team != null ? `<div class="actions" style="margin-top:0"><button class="btn primary" data-act="witchgo">Read the question</button>
+        <span class="hint" style="align-self:center">${esc(T[w.team].name)} answers for ${fmt(w.price)}. Right: +${fmt(w.price)}. Wrong: −${fmt(w.price)}.</span></div>` : ""}
+      </div>` : ""}`;
+  } else {
+    const who = q.team != null ? `<p class="hint">${esc(T[q.team].name)} answers${q.special?` for ${fmt(stakes)}. Right: +${fmt(stakes)}. Wrong: −${fmt(stakes)}`:""}.</p>` : "";
+    body = `${q.special==="cat"?`<div class="special blackcat">${CAT_SVG}<div><h3>Black Cat in the Bag</h3></div></div>`:""}
+      ${q.special==="witch"?`<div class="special witch">${HAT_SVG}<div><h3>Deal with the Witch</h3></div></div>`:""}
+      <p class="qtext">${esc(item.q)}</p>${who}`;
+    if (q.stage === "ask"){
+      body += `<div class="actions" style="align-items:center;margin-top:0">${timerHTML()}
+        <button class="btn" data-act="speakq">${SPEAK_SVG} Read again <span class="kbd">R</span></button>
+        <button class="btn primary" data-act="reveal">Show answer <span class="kbd">Space</span></button></div>`;
+    } else {
+      body += `<div class="answer"><div class="a">${esc(item.a)}</div>${item.note?`<div class="note">${esc(item.note)}</div>`:""}</div>`;
+      body += `<div class="judge">` + T.map((t,i)=>{
+        if (i !== q.team) return "";
+        const j = q.judged[i];
+        const picked = !q.special && i === q.team;
+        return `<div class="jrow"><div class="jn">${esc(t.name)}${picked?`<small>Picked this one</small>`:""}</div>
+          <div class="seg" role="group" aria-label="Result for ${esc(t.name)}">
+            ${q.special || picked ? `<button class="ok" data-act="judge" data-i="${i}" data-v="ok" aria-pressed="${j==="ok"}">Correct +${stakes}</button>` : ""}
+            
+            ${q.special || picked ? `<button class="no" data-act="judge" data-i="${i}" data-v="no" aria-pressed="${j==="no"}">Wrong −${stakes}</button>`:""}
+          </div></div>`;
+      }).join("") + `</div>
+      <div class="actions" style="margin-top:0"><button class="btn primary" data-act="done">Update scores and close</button>
+      <button class="btn" data-act="speaka">${SPEAK_SVG} Read answer</button>
+      <span class="hint" style="align-self:center">Leave it unmarked to give no points either way.</span></div>`;
+    }
+  }
+  const canCancel = q.stage !== "answer";
+  return `<div class="overlay" role="dialog" aria-modal="true" aria-label="Question">
+    <div class="qcard">
+      <div class="qhead"><div class="eyebrow">${esc(cat.name)}</div>
+        <div style="display:flex;gap:14px;align-items:center"><span class="val num">${q.special === "witch" && !q.bid ? "?" : stakes}</span>
+        ${canCancel?`<button class="btn small ghost" data-act="cancel">Back to board</button>`:""}</div></div>
+      ${body}
+    </div></div>`;
+}
+
+function viewFinal(){
+  const F = Q.final, st = S.final, T = teams();
+  let body = "";
+  if (st.stage === "category"){
+    body = `<div class="eyebrow">Midnight · final category</div>
+      <h1 class="big-cat">${esc(F.category)}</h1>
+      <p class="lede">Each team writes down a secret wager now: any amount from 0 up to half of its current score, or up to 500 if that is more.</p>
+      <p class="lede" style="color:var(--ash)">Highest wager allowed: ${T.map(t=>`<b style="color:var(--ember)">${esc(t.name)} ${fmt(maxWager(t))}</b>`).join(" · ")}</p>
+      ${viewScores()}
+      <div class="actions"><button class="btn primary" data-act="fask">Wagers are in. Show the question</button></div>`;
+  } else if (st.stage === "ask"){
+    body = `<div class="eyebrow">Midnight · ${esc(F.category)}</div>
+      <p class="qtext">${esc(F.q)}</p>
+      <p class="hint">Teams write their answer on paper. 60 seconds.</p>
+      <div class="actions" style="align-items:center">${timerHTML()}<button class="btn" data-act="speakq">${SPEAK_SVG} Read again <span class="kbd">R</span></button><button class="btn primary" data-act="freveal">Show answer <span class="kbd">Space</span></button></div>`;
+  } else {
+    body = `<div class="eyebrow">Midnight · ${esc(F.category)}</div>
+      <p class="qtext" style="font-size:clamp(1.2rem,2.4vw,1.7rem);color:var(--ash)">${esc(F.q)}</p>
+      <div class="answer"><div class="a">${esc(F.a)}</div>${F.note?`<div class="note">${esc(F.note)}</div>`:""}</div>
+      <p class="hint">Enter each team's wager and mark the answer.</p>
+      <div class="judge">${T.map((t,i)=>{
+        const max = maxWager(t), j = st.judged[i];
+        return `<div class="jrow"><div class="jn">${esc(t.name)}<small>Score ${fmt(t.score)}</small></div>
+        <div class="field"><label for="w${i}" class="hint">Wager (max ${max})</label><input class="wager" type="number" id="w${i}" min="0" max="${max}" step="25" value="${st.wagers[i] ?? 0}" data-wager="${i}"></div>
+        <div class="seg" role="group" aria-label="Final result for ${esc(t.name)}">
+          <button class="ok" data-act="fjudge" data-i="${i}" data-v="ok" aria-pressed="${j==="ok"}">Correct</button>
+          <button class="no" data-act="fjudge" data-i="${i}" data-v="no" aria-pressed="${j==="no"}">Wrong</button>
+        </div></div>`;}).join("")}</div>
+      <div class="actions"><button class="btn primary" data-act="fdone">Reveal the winners</button><button class="btn" data-act="speaka">${SPEAK_SVG} Read answer</button></div>`;
+  }
+  return `<div class="stage">${body}</div>`;
+}
+
+/* Places: equal scores share a place unless a tiebreaker ordered them (S.tbOrder, closest first). */
+function standings(){
+  const T = teams().map((t,i)=>({ ...t, i }));
+  const tb = S.tbOrder || [];
+  const pos = t => { const k = tb.indexOf(t.i); return k < 0 ? Infinity : k; };
+  const better = (a,b) => a.score > b.score || (a.score === b.score && pos(a) < pos(b));
+  T.forEach(t => { t.rank = 1 + T.filter(o => better(o, t)).length; });
+  return T.sort((a,b) => a.rank - b.rank || a.i - b.i);
+}
+function tiedForPrizes(){
+  const st = standings();
+  return st.filter(t => t.rank === 1 && st.some(o => o.i !== t.i && o.rank === t.rank));   // only one team wins, so only a tie for first matters
+}
+function announceWinners(){
+  const st = standings(), w = st.filter(t => t.rank === 1);
+  if (w.length === 1) say(winnerLine(w[0].name), null, { delay: 1500 });
+  else say(LINES.tie, null, { delay: 1500 });
+}
+const tbQ = () => Q.tiebreak || DEFAULT_Q.tiebreak;
+
+function viewPodium(){
+  const st = standings();
+  const top = st.filter(t => t.rank <= 3), rest = st.filter(t => t.rank > 3);
+  const winners = st.filter(t => t.rank === 1);
+  const tied = tiedForPrizes();
+  const headline = winners.length === 1 ? esc(winners[0].name) + " survive the night"
+    : winners.length === st.length ? "It's a tie!"
+    : winners.map(w => esc(w.name)).join(" and ") + " tie for first";
+  const order = ({1:[0], 2:[1,0], 3:[1,0,2], 4:[2,0,1,3]})[top.length] || top.map((_,k)=>k);
+  const slot = t => `<div class="step p${Math.min(t.rank,3)}"><div class="who">${esc(t.name)}</div><div class="pts">${fmt(t.score)}</div><div class="block">${t.rank}</div></div>`;
+  return `<div class="stage">
+    <div class="eyebrow">Victoria’s Night of Frights · final standings</div>
+    <h1 class="big-cat">${headline}</h1>
+    ${tied.length ? `<div class="special blackcat">${CAT_SVG}<div><h3>Tie!</h3>
+      <p>${tied.map(t => esc(t.name)).join(", ")} have the same score. Play a tiebreaker to decide the winner: the closest number wins.</p></div></div>
+      <div class="actions" style="margin-top:0"><button class="btn primary" data-act="tbstart">Play the tiebreaker</button></div>` : ""}
+    <div class="podium" style="grid-template-columns:repeat(${order.length},minmax(0,1fr))">${order.map(k => slot(top[k])).join("")}</div>
+    ${(S.tbOrder || []).length ? `<p class="hint">Equal scores were split by the tiebreaker.</p>` : ""}
+    ${rest.length ? `<div class="rest">${rest.map(t=>`<div><span>${t.rank}. ${esc(t.name)}</span><span class="num">${fmt(t.score)}</span></div>`).join("")}</div>` : ""}
+    <div class="actions">
+      <button class="btn" data-act="toboard">Back to the board</button>
+      <button class="btn ghost ${armed==="new"?"warn":""}" data-act="new">${armed==="new" ? "Click again to end this game" : "New game"}</button>
+    </div></div>`;
+}
+
+function viewTiebreak(){
+  const tb = S.tb, TB = tbQ(), T = teams(), ids = tb.teams, order = S.tbOrder || [];
+  let body = `<div class="eyebrow">Tiebreaker · closest number wins</div>
+    <p class="qtext">${esc(TB.q)}</p>
+    <p class="hint">${ids.map(i => esc(T[i].name)).join(", ")}: write a number on paper. The closest answer wins.</p>`;
+  if (tb.stage === "ask"){
+    body += `<div class="actions" style="align-items:center">${timerHTML()}<button class="btn" data-act="speakq">${SPEAK_SVG} Read again <span class="kbd">R</span></button><button class="btn primary" data-act="tbreveal">Show answer <span class="kbd">Space</span></button></div>`;
+  } else {
+    body += `<div class="answer"><div class="a">${esc(TB.a)}</div>${TB.note ? `<div class="note">${esc(TB.note)}</div>` : ""}</div>
+      <p class="hint">Click the teams from closest to farthest. Click again to undo.</p>
+      <div class="pick">${ids.map(i => { const k = order.indexOf(i); return `<button class="btn ${k >= 0 ? "primary" : ""}" data-act="tbpick" data-i="${i}">${k >= 0 ? (k+1) + ". " : ""}${esc(T[i].name)}</button>`; }).join("")}</div>
+      <div class="actions"><button class="btn primary" data-act="tbdone" ${order.length < ids.length - 1 ? "disabled" : ""}>Show final standings</button></div>`;
+  }
+  return `<div class="stage">${body}</div>`;
+}
+
+function viewEditor(){
+  const tab = S.editor.tab;
+  let body = "";
+  if (tab === "final"){
+    const F = Q.final;
+    body = `<div class="ecat">
+      <div class="field"><label for="ef-cat">Final category</label><input type="text" id="ef-cat" data-path="final.category" value="${esc(F.category)}"></div>
+      <div class="field"><label for="ef-q">Question</label><textarea id="ef-q" data-path="final.q" rows="3">${esc(F.q)}</textarea></div>
+      <div class="eq" style="grid-template-columns:minmax(0,1fr)"><div class="fields">
+        <div class="field"><label for="ef-a">Answer</label><input type="text" id="ef-a" data-path="final.a" value="${esc(F.a)}"></div>
+        <div class="field"><label for="ef-n">Explanation shown with the answer (optional)</label><input type="text" id="ef-n" data-path="final.note" value="${esc(F.note||"")}"></div>
+      </div></div></div>
+      <div class="ecat">
+        <div class="eyebrow">Tiebreaker (used only if teams finish with the same score)</div>
+        <div class="field"><label for="et-q">Question with a number for an answer</label><textarea id="et-q" data-path="tiebreak.q" rows="2">${esc(tbQ().q)}</textarea></div>
+        <div class="field"><label for="et-a">Answer</label><input type="text" id="et-a" data-path="tiebreak.a" value="${esc(tbQ().a)}"></div>
+      </div>`;
+  } else {
+    const r = Q.rounds[tab];
+    body = r.categories.map((c,ci)=>`<div class="ecat">
+      <div class="field"><label for="ec-${tab}-${ci}">Category ${ci+1}</label><input type="text" id="ec-${tab}-${ci}" data-path="rounds.${tab}.categories.${ci}.name" value="${esc(c.name)}"></div>
+      ${c.qs.map((q,i)=>{ const p = `rounds.${tab}.categories.${ci}.qs.${i}`; const id = `e-${tab}-${ci}-${i}`; return `<div class="eq"><div class="v num">${r.values[i]}</div><div class="fields">
+        <div class="field wide"><label for="${id}-q">Question</label><textarea id="${id}-q" data-path="${p}.q" rows="2">${esc(q.q)}</textarea></div>
+        <div class="field"><label for="${id}-a">Answer</label><input type="text" id="${id}-a" data-path="${p}.a" value="${esc(q.a)}"></div>
+        <div class="field"><label for="${id}-n">Explanation shown with the answer (optional)</label><input type="text" id="${id}-n" data-path="${p}.note" value="${esc(q.note||"")}"></div>
+        <div class="field"><label for="${id}-s">Surprise</label><select id="${id}-s" data-path="${p}.special">
+          <option value="" ${!q.special?"selected":""}>Regular question</option>
+          <option value="cat" ${q.special==="cat"?"selected":""}>Black Cat in the Bag</option>
+          <option value="witch" ${q.special==="witch"?"selected":""}>Deal with the Witch</option></select></div>
+      </div></div>`;}).join("")}
+    </div>`).join("");
+  }
+  return `<div class="overlay" role="dialog" aria-modal="true" aria-label="Edit questions">
+    <div class="qcard">
+      <div class="qhead"><h2 class="round-name">Edit questions</h2>
+        <div class="tools"><button class="btn primary" data-act="edone">Done</button></div></div>
+      <p class="hint">Changes save automatically in this browser. Keep the board on the same computer you edit on.</p>
+      <div class="tabs" role="tablist">
+        ${Q.rounds.map((r,i)=>`<button class="btn small" role="tab" data-act="etab" data-t="${i}" aria-selected="${tab===i}">${esc(r.name)}</button>`).join("")}
+        <button class="btn small" role="tab" data-act="etab" data-t="final" aria-selected="${tab==="final"}">Midnight</button>
+      </div>
+      ${body}
+      <div class="actions"><button class="btn primary" data-act="edone">Done</button>
+        <button class="btn ghost ${armed==="reset"?"warn":""}" data-act="ereset">${armed==="reset"?"Click again to restore the original questions":"Restore original questions"}</button></div>
+    </div></div>`;
+}
+
+function viewVoice(){
+  let body;
+  if (!TTS){
+    body = `<p class="lede">This browser can't read text aloud. Open the game in Microsoft Edge or Google Chrome.</p>`;
+  } else {
+    const cur = pickVoice();
+    body = `<div class="panel vgrid">
+      <label class="check" for="v-on"><input type="checkbox" id="v-on" data-v="on" ${V.on?"checked":""}><span>Read questions aloud<small>Each question is read when it opens. Surprises, the final category and the winners are announced too.</small></span></label>
+      <label class="check" for="v-ans"><input type="checkbox" id="v-ans" data-v="answers" ${V.answers?"checked":""}><span>Read answers aloud<small>The answer is read when you press Show answer.</small></span></label>
+      <label class="check" for="v-wait"><input type="checkbox" id="v-wait" data-v="waitTimer" ${V.waitTimer?"checked":""}><span>Start the timer after the question is read<small>Teams get the full 30 seconds once they have heard the question.</small></span></label>
+      <div class="field"><label for="v-name">Voice</label><select id="v-name" data-v="name">
+        ${voices.length ? voices.map(v=>`<option value="${esc(v.name)}" ${cur && cur.name===v.name ? "selected":""}>${esc(v.name)} · ${esc(v.lang)}</option>`).join("") : `<option value="">Default voice</option>`}
+      </select></div>
+      <div class="field"><div class="rangehead"><label for="v-rate">Speed</label><span class="num" id="o-rate">${V.rate}</span></div>
+        <input type="range" id="v-rate" data-v="rate" min="0.6" max="1.4" step="0.05" value="${V.rate}"></div>
+      <div class="field"><div class="rangehead"><label for="v-pitch">Pitch</label><span class="num" id="o-pitch">${V.pitch}</span></div>
+        <input type="range" id="v-pitch" data-v="pitch" min="0.3" max="1.6" step="0.05" value="${V.pitch}"></div>
+      <div class="actions" style="margin-top:0">
+        <button class="btn primary" data-act="vtest">${SPEAK_SVG} Test the voice</button>
+        <button class="btn" data-act="vpreset" data-p="spooky">Spooky voice</button>
+        <button class="btn ghost" data-act="vpreset" data-p="normal">Normal voice</button>
+      </div>
+    </div>
+    <p class="hint">Voices come from this computer's browser. Voices marked "Natural" or "Online" sound the most human, and Microsoft Edge on Windows has the best set. When you share your screen in Teams, turn on "Include computer sound" so the colleague on video hears the voice too.</p>`;
+  }
+  const lines = voiceLines(), ready = PACK ? lines.filter(l => PACK.lines[l.text]).length : 0;
+  const narrator = `<div class="panel vgrid" style="margin-bottom:16px">
+      <div class="field"><span class="eyebrow">Narrator</span>
+        <div class="pick">
+          <button class="btn small ${V.engine !== "browser" ? "primary" : ""}" data-act="vengine" data-e="pack" aria-pressed="${V.engine !== "browser"}">ElevenLabs narrator</button>
+          <button class="btn small ${V.engine === "browser" ? "primary" : ""}" data-act="vengine" data-e="browser" aria-pressed="${V.engine === "browser"}">Browser voice</button>
+        </div></div>
+      <p class="hint" style="margin:0">${PACK
+        ? `Narrator audio: ${esc(PACK.voice)}${PACK.model ? " · " + esc(PACK.model) : ""}. ${ready} of ${lines.length} lines are voiced.${ready < lines.length ? " Lines without audio use the browser voice." : ""}`
+        : "No narrator audio has been added yet, so the browser voice is used."}</p>
+      <div class="actions" style="margin-top:0"><button class="btn small" data-act="vcopy">Copy voice lines for the generator</button></div>
+      ${S.voiceExport ? `<textarea id="v-export" rows="6" readonly>${esc(S.voiceExport)}</textarea><p class="hint" style="margin:0">Select all, copy, and save it as voice-lines.json next to the generator.</p>` : ""}
+    </div>`;
+  body = narrator + body;
+  return `<div class="overlay" role="dialog" aria-modal="true" aria-label="Voice settings">
+    <div class="qcard" style="max-width:760px">
+      <div class="qhead"><h2 class="round-name">Voice</h2><button class="btn primary" data-act="vdone">Done</button></div>
+      ${body}
+    </div></div>`;
+}
+
+/* ===================== Timer ===================== */
+function startTimer(sec){ stopTimer(); timer.total = sec; timer.left = sec; timer.running = true; timer.id = setInterval(tickTimer, 1000); if (finalAsking()) Music.start(); }
+function stopTimer(){ if (timer.id) clearInterval(timer.id); timer.id = null; timer.running = false; timer.waiting = false; Music.stop(); }
+function readThenTime(text, sec, delay){
+  if (TTS && V.on && V.waitTimer){
+    stopTimer(); timer.total = sec; timer.left = sec; timer.waiting = true; paintTimer();
+    say(text, () => { if (timer.waiting){ startTimer(sec); paintTimer(); } }, { delay });
+  } else {
+    startTimer(sec); paintTimer(); say(text, null, { delay });
+  }
+}
+function answerSpeech(){ return answerLine({ a: currentText("a"), note: currentText("n") }); }
+function currentText(which){
+  if (S.q){ const it = R().categories[S.q.c].qs[S.q.i]; return which === "a" ? it.a : which === "n" ? (it.note || "") : it.q; }
+  if (S.screen === "final" && S.final) return which === "a" ? Q.final.a : which === "n" ? (Q.final.note || "") : Q.final.q;
+  if (S.screen === "tiebreak" && S.tb) return which === "a" ? tbQ().a : which === "n" ? (tbQ().note || "") : tbQ().q;
+  return "";
+}
+function tickTimer(){
+  timer.left = Math.max(0, timer.left - 1);
+  if (timer.left > 0 && timer.left <= 5) SFX.tick();
+  if (timer.left === 0){ stopTimer(); SFX.end(); }
+  paintTimer();
+}
+function paintTimer(){
+  const t = document.getElementById("tleft"), ring = document.getElementById("ring"), box = document.getElementById("timer");
+  if (!t || !ring) return;
+  t.textContent = timer.left;
+  ring.setAttribute("stroke-dashoffset", String(213.6 * (1 - (timer.total ? timer.left / timer.total : 0))));
+  box.classList.toggle("low", timer.left <= 5);
+  const pb = box.querySelector('[data-act="tpause"]'); if (pb) pb.textContent = timer.waiting ? "Start now" : timer.running ? "Pause" : (timer.left===0 ? "Time's up" : "Resume");
+}
+
+/* ===================== Actions ===================== */
+function nextTurn(){ S.turn = (S.turn + 1) % S.teamCount; }
+
+const actions = {
+  count(el){ S.teamCount = +el.dataset.n; persist(); render(); },
+  start(){
+    const names = teams().map(t=>t.name);
+    const allNames = S.teams.map(t=>t.name);
+    const n = S.teamCount;
+    S = freshState(n, allNames); S.teams.forEach((t,i)=>{ if(names[i]) t.name = names[i]; });
+    S.screen = "rules"; S.deck = "intro"; S.slide = 0; S.rulesReturn = false; hist = []; armed = null; persist(); render(); audio(); readSlide();
+  },
+  resume(){ S.screen = S.final ? (S.final.stage==="done" ? "podium" : "final") : "board"; persist(); render(); audio(); },
+  edit(){ S.editor = { tab: S.screen==="board" ? S.round : 0 }; armed = null; render(); },
+  etab(el){ const t = el.dataset.t; S.editor.tab = t === "final" ? "final" : +t; render(); },
+  edone(){ S.editor = null; armed = null; persistQ(); render(); },
+  ereset(){ if (armed !== "reset"){ armed = "reset"; render(); return; } Q = clone(DEFAULT_Q); persistQ(); armed = null; render(); },
+  sound(){ S.sound = !S.sound; persist(); render(); if (S.sound) SFX.reveal(); },
+  undo(){ undo(); },
+  adj(el){ pushHist(); const t = S.teams[+el.dataset.i]; t.score += +el.dataset.d; persist(); render(); },
+  turn(){ nextTurn(); persist(); render(); },
+  new(){
+    if (armed !== "new"){ armed = "new"; render(); return; }
+    armed = null; stopTimer(); stopSpeech(); const names = S.teams.map(t=>t.name), n = S.teamCount;
+    S = freshState(n, names); hist = []; persist(); render();
+  },
+  next(){
+    if (S.final && S.final.stage === "done"){ armed = null; S.screen = "podium"; persist(); render(); return; }
+    if (remaining() > 0 && armed !== "next"){ armed = "next"; render(); return; }
+    armed = null;
+    /* Before Round Two and before the final, show that round's rules slide first */
+    S.screen = "rules"; S.slide = 0; S.rulesReturn = false;
+    S.deck = S.round < Q.rounds.length - 1 ? "round2" : "midnight";
+    persist(); render(); if (S.deck === "midnight") SFX.witch(); else SFX.open(); readSlide();
+  },
+  open(el){
+    armed = null;
+    const c = +el.dataset.c, i = +el.dataset.i, item = R().categories[c].qs[i];
+    S.q = { c, i, value: R().values[i], special: item.special || null, picker: S.turn, team: item.special ? null : S.turn, bid: null, w: { price: null, team: null }, judged: {}, stage: item.special ? "intro" : "ask" };
+    persist(); render();
+    if (item.special === "cat"){
+      SFX.cat();
+      const cq = S.q;
+      const reveal = () => { if (S.q === cq && cq.stage === "intro" && !cq.catAsk){ cq.catAsk = true; persist(); render(); return true; } return false; };
+      say(LINES.cat, () => { if (reveal()) say(LINES.catWho, null, { delay: 150 }); }, { delay: 700 });
+      setTimeout(reveal, 9000);   // never leave the host without the team buttons
+    }
+    else if (item.special === "witch"){
+      SFX.witch();
+      const wq = S.q;
+      const reveal = () => { if (S.q === wq && wq.stage === "intro" && !wq.witchAsk){ wq.witchAsk = true; persist(); render(); return true; } return false; };
+      say(LINES.witchTitle, () => { if (reveal()) say(LINES.witch, null, { delay: 250 }); }, { delay: 700 });
+      setTimeout(reveal, 8000);   // never leave the host without the wands
+    }
+    else { SFX.open(); readThenTime(item.q, 30, 700); }
+  },
+  cancel(){ witchSpin = 0; stopTimer(); stopSpeech(); S.q = null; persist(); render(); },
+  wand1(el){
+    const q = S.q; if (!q || q.special !== "witch" || witchSpin) return;
+    q.w = q.w || { price: null, team: null }; if (q.w.price != null) return;
+    const vals = R().values, idx = rnd(vals.length);
+    stopSpeech(); waveWand(el); SFX.wand(); el.disabled = true;
+    document.querySelectorAll('[data-act="wand2"]').forEach(b => b.disabled = true);
+    spinReel("reel-price", vals.map(fmt), idx, () => {
+      q.w.price = vals[idx]; q.bid = vals[idx]; persist(); render(); SFX.magic();
+      say(priceLine(vals[idx]), null, { delay: 300 });
+    });
+  },
+  wand2(el){
+    const q = S.q; if (!q || q.special !== "witch" || witchSpin || !q.w || q.w.price == null || q.w.team != null) return;
+    const T = teams(), idx = rnd(T.length);
+    stopSpeech(); waveWand(el); SFX.wand(); el.disabled = true;
+    spinReel("reel-team", T.map(t => t.name), idx, () => {
+      q.w.team = idx; q.team = idx; persist(); render(); SFX.magic();
+      say(dealLine(T[idx].name), null, { delay: 300 });
+    });
+  },
+  witchgo(){ const q = S.q; if (!q || !q.w || q.w.team == null) return; q.stage = "ask"; persist(); render(); readThenTime(currentText("q"), 30, 200); },
+  catto(el){ S.q.team = +el.dataset.i; S.q.stage = "ask"; persist(); render(); readThenTime(currentText("q"), 30, 200); },
+  witchto(el){
+    const b = parseInt(document.getElementById("bid").value, 10);
+    S.q.bid = Math.max(S.q.value, isNaN(b) ? S.q.value : b);
+    S.q.team = +el.dataset.i; S.q.stage = "ask"; persist(); render(); readThenTime(currentText("q"), 30, 200);
+  },
+  tpause(){ if (timer.running){ stopTimer(); } else if (timer.left > 0){ timer.waiting = false; timer.running = true; timer.id = setInterval(tickTimer,1000); if (finalAsking()) Music.start(); } paintTimer(); },
+  trestart(){ startTimer(timer.total || 30); paintTimer(); },
+  reveal(){ stopTimer(); stopSpeech(); S.q.stage = "answer"; persist(); render(); SFX.reveal(); if (V.answers) say(answerSpeech(), null, { delay: 500 }); },
+  judge(el){
+    const i = +el.dataset.i, v = el.dataset.v;
+    S.q.judged[i] = S.q.judged[i] === v ? undefined : v;
+    if (S.q.judged[i] === "ok" || S.q.judged[i] === "half") SFX.good(); else if (S.q.judged[i] === "no") SFX.bad();
+    persist(); render();
+  },
+  done(){
+    stopSpeech();
+    const q = S.q; pushHist();
+    const stakes = q.special === "witch" && q.bid ? q.bid : q.value;
+    Object.entries(q.judged).forEach(([i,v])=>{
+      if (!v) return; const t = S.teams[+i];
+      if (v === "ok") t.score += stakes; else if (v === "half") t.score += Math.round(stakes/2); else if (v === "no") t.score -= stakes;
+    });
+    S.used[key(S.round,q.c,q.i)] = true; S.q = null; nextTurn(); persist(); render();
+  },
+  fask(){ S.final.stage = "ask"; persist(); render(); SFX.open(); readThenTime(Q.final.q, 60, 700); },
+  freveal(){ stopTimer(); stopSpeech(); S.final.stage = "answer"; persist(); render(); SFX.reveal(); if (V.answers) say(answerSpeech(), null, { delay: 500 }); },
+  fjudge(el){ const i = +el.dataset.i, v = el.dataset.v; readWagers(); S.final.judged[i] = S.final.judged[i] === v ? null : v; persist(); render(); if (v==="ok") SFX.good(); else SFX.bad(); },
+  fdone(){
+    readWagers(); pushHist();
+    teams().forEach((t,i)=>{
+      const w = Math.min(Math.max(0, S.final.wagers[i] || 0), maxWager(t));
+      if (S.final.judged[i] === "ok") t.score += w; else if (S.final.judged[i] === "no") t.score -= w;
+    });
+    S.final.stage = "done"; S.tbOrder = []; S.screen = "podium"; persist(); render(); SFX.good();
+    announceWinners();
+  },
+  tbstart(){
+    S.tb = { stage: "ask", teams: tiedForPrizes().map(t => t.i) }; S.tbOrder = [];
+    S.screen = "tiebreak"; persist(); render(); SFX.witch(); readThenTime(tbQ().q, 30, 700);
+  },
+  tbreveal(){ stopTimer(); stopSpeech(); S.tb.stage = "answer"; persist(); render(); SFX.reveal(); if (V.answers) say(answerSpeech(), null, { delay: 500 }); },
+  tbpick(el){ const i = +el.dataset.i, o = S.tbOrder, k = o.indexOf(i); if (k >= 0) o.splice(k, 1); else o.push(i); persist(); render(); },
+  tbdone(){ stopSpeech(); S.screen = "podium"; S.tb = null; persist(); render(); SFX.good(); announceWinners(); },
+  toboard(){ stopSpeech(); S.screen = "board"; persist(); render(); },
+  voice(){ S.voicePanel = true; armed = null; render(); },
+  vdone(){ S.voicePanel = null; S.voiceExport = null; persistV(); render(); },
+  vengine(el){ V.engine = el.dataset.e; persistV(); render(); actions.vtest(); },
+  vcopy(el){
+    const lines = voiceLines(), json = JSON.stringify(lines, null, 2);
+    const fallback = () => { S.voiceExport = json; render(); };
+    try { navigator.clipboard.writeText(json).then(() => { el.textContent = "Copied " + lines.length + " lines"; }, fallback); } catch(e){ fallback(); }
+  },
+  vtest(){ say(LINES.test, null, { force: true }); },
+  vpreset(el){
+    if (el.dataset.p === "spooky"){ V.rate = 0.85; V.pitch = 0.55; } else { V.rate = 1; V.pitch = 1; }
+    persistV(); render(); actions.vtest();
+  },
+  speakq(){
+    const t = currentText("q"); if (!t) return;
+    if (timer.waiting) readThenTime(t, timer.total || 30, 0); else say(t, null, { force: true });
+  },
+  speaka(){ if (currentText("a")) say(answerSpeech(), null, { force: true }); },
+  rules(){ stopSpeech(); S.screen = "rules"; S.deck = "intro"; S.slide = 0; S.rulesReturn = true; armed = null; persist(); render(); readSlide(); },
+  snext(){
+    const n = slides().length;
+    if ((S.slide || 0) >= n - 1){
+      stopSpeech();
+      if (S.deck === "round2"){ S.deck = "intro"; S.round++; S.turn = 0; S.screen = "board"; persist(); render(); SFX.open(); say(roundLine(R()), null, { delay: 800 }); return; }
+      if (S.deck === "midnight"){ S.deck = "intro"; S.screen = "final"; S.final = { stage: "category", wagers: [], judged: [] }; persist(); render(); SFX.witch(); say(midnightLine(), null, { delay: 800 }); return; }
+      S.screen = "board"; persist(); render(); SFX.open(); return;
+    }
+    S.slide = (S.slide || 0) + 1; persist(); render(); readSlide();
+  },
+  sprev(){ if ((S.slide || 0) > 0){ S.slide--; persist(); render(); readSlide(); } },
+  sgo(el){ S.slide = +el.dataset.k; persist(); render(); readSlide(); },
+  sskip(){ stopSpeech(); S.screen = "board"; persist(); render(); SFX.open(); },
+  sread(){ readSlide(true); },
+  sauto(){ V.slides = !V.slides; persistV(); render(); if (V.slides) readSlide(true); else stopSpeech(); }
+};
+function readWagers(){ document.querySelectorAll("[data-wager]").forEach(inp=>{ const v = parseInt(inp.value,10); S.final.wagers[+inp.dataset.wager] = isNaN(v) ? 0 : v; }); }
+
+app.addEventListener("click", e => {
+  const el = e.target.closest("[data-act]"); if (!el || el.disabled) return;
+  const a = el.dataset.act;
+  if (armed && !["new","next","ereset"].includes(a)) armed = null;
+  const fn = actions[a]; if (fn) fn(el);
+});
+app.addEventListener("input", e => {
+  const el = e.target;
+  if (el.dataset.v){
+    const k = el.dataset.v;
+    if (el.type === "checkbox") V[k] = el.checked;
+    else if (el.type === "range"){ V[k] = parseFloat(el.value); const o = document.getElementById("o-" + k); if (o) o.textContent = String(V[k]); }
+    else V[k] = el.value;
+    if (k === "on" && !V.on) stopSpeech();
+    persistV(); return;
+  }
+  if (el.dataset.team != null){ S.teams[+el.dataset.team].name = el.value; persist(); return; }
+  if (el.dataset.path){ setPath(el.dataset.path, el.value); persistQ(); }
+});
+app.addEventListener("change", e => {
+  const el = e.target;
+  if (el.dataset.path && el.tagName === "SELECT"){ setPath(el.dataset.path, el.value || undefined); persistQ(); }
+});
+function setPath(path, val){
+  const parts = path.split("."); let o = Q;
+  for (let k=0;k<parts.length-1;k++){ const p = parts[k]; o = o[/^\d+$/.test(p) ? +p : p]; }
+  const last = parts[parts.length-1];
+  if (val === undefined || val === "") { if (last === "special" || last === "note") delete o[last]; else o[last] = ""; }
+  else o[last] = val;
+}
+document.addEventListener("keydown", e => {
+  const tag = (e.target.tagName||"").toLowerCase();
+  if (["input","textarea","select"].includes(tag)) return;
+  if (S.screen === "rules" && !S.editor && !S.voicePanel){
+    const k = e.key;
+    if (k === "ArrowRight" || k === "PageDown" || ((k === " " || k === "Enter") && tag !== "button")){ e.preventDefault(); actions.snext(); return; }
+    if (k === "ArrowLeft" || k === "PageUp"){ e.preventDefault(); actions.sprev(); return; }
+  }
+  if (e.code === "Space"){
+    if (S.q && S.q.stage === "ask"){ e.preventDefault(); actions.reveal(); }
+    else if (S.screen === "final" && S.final && S.final.stage === "ask"){ e.preventDefault(); actions.freveal(); }
+    else if (S.screen === "tiebreak" && S.tb && S.tb.stage === "ask"){ e.preventDefault(); actions.tbreveal(); }
+  }
+  if ((e.key === "r" || e.key === "R") && !e.metaKey && !e.ctrlKey){
+    if ((S.q && S.q.stage !== "intro") || (S.screen === "final" && S.final && S.final.stage === "ask") || (S.screen === "tiebreak" && S.tb && S.tb.stage === "ask")) actions.speakq();
+  }
+  if (e.key === "Escape"){
+    if (S.voicePanel){ actions.vdone(); }
+    else if (S.editor){ actions.edone(); }
+    else if (S.q && S.q.stage !== "answer"){ actions.cancel(); }
+  }
+});
+
+/* ===================== Boot ===================== */
+function start(data){
+  if (data && data.S) S = data.S;
+  if (data && data.Q) Q = data.Q;
+  if (S.q && S.q.stage === "intro"){ S.q.catAsk = true; S.q.witchAsk = true; }   // after a reload, show the cat/witch controls right away
+  if (S.q && S.q.stage === "ask"){ timer.left = 30; timer.total = 30; }
+  if (S.screen === "final" && S.final && S.final.stage === "ask"){ timer.left = 60; timer.total = 60; }
+  render();
+}
+loadPack();
+try { window.claude?.hot?.snapshot?.(() => ({ S, Q })); } catch(e){}
+window.claude?.hot?.ready ? window.claude.hot.ready(start) : start(window.claude?.hot?.data ?? {});
+</script>
+<nav class="nof-links" aria-label="More about the game">
+<a href="/night-of-frights-game/halloween-trivia-questions/">Halloween trivia questions</a>
+<a href="/night-of-frights-game/virtual-halloween-games-for-work/">Remote &amp; hybrid teams</a>
+<a href="/night-of-frights-game/how-to-host-a-halloween-game-night/">Host guide</a>
+<a href="/night-of-frights-game/faq/">FAQ</a>
+</nav>
+<style>
+.nof-links{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;max-width:1400px;margin:0 auto;padding:8px 16px 36px;
+  font-family:"Alegreya Sans",system-ui,sans-serif;font-weight:700;font-size:.95rem}
+.nof-links a{color:#ab9fbd;text-decoration:none}
+.nof-links a:hover,.nof-links a:focus-visible{color:#ffd58a;text-decoration:underline}
+.nof-links[hidden]{display:none!important}
+</style>
+<script>
+(function(){
+  var nav = document.querySelector('.nof-links'), app = document.getElementById('app');
+  var sync = function(){ nav.hidden = !(app.querySelector('.setup') || app.querySelector('.nof-static')); };
+  new MutationObserver(sync).observe(app, { childList: true }); sync();
+})();
+</script>
+<script>
+(function(){
+  if (typeof gtag !== 'function') return;
+  var app = document.getElementById('app'), last = '', fired = {};
+  var store = { get: function(k){ try { return sessionStorage.getItem(k); } catch(e){ return null; } },
+                set: function(k,v){ try { sessionStorage.setItem(k,v); } catch(e){} } };
+  try { fired = JSON.parse(store.get('nof-ga') || '{}'); } catch(e){ fired = {}; }
+  var once = function(name, params){ if (fired[name]) return; fired[name] = 1; store.set('nof-ga', JSON.stringify(fired)); gtag('event', name, params || {}); };
+  var check = function(){
+    var s; try { s = S; } catch(e){ return; }
+    if (!s) return;
+    var key = s.screen + '|' + s.round + '|' + (s.deck || '') + '|' + (s.q ? s.q.c + '-' + s.q.i + '-' + s.round : '');
+    if (key === last) return;
+    var prev = last; last = key;
+    var teams = s.teamCount;
+    if (s.screen === 'rules' && s.deck === 'intro' && prev.indexOf('setup') === 0){
+      fired = {}; store.set('nof-ga', '{}');
+      once('game_start', { team_count: teams });
+    }
+    if (s.screen === 'board' && s.round === 1) once('round_two', { team_count: teams });
+    if (s.screen === 'final') once('midnight', { team_count: teams });
+    if (s.screen === 'tiebreak') once('tiebreaker', { team_count: teams });
+    if (s.screen === 'podium') once('game_complete', { team_count: teams });
+    if (s.screen === 'board' && s.q && prev.split('|')[3] !== key.split('|')[3]){
+      gtag('event', 'question_open', { round: s.round + 1, value: s.q.value, special: s.q.special || 'none' });
+    }
+  };
+  new MutationObserver(check).observe(app, { childList: true });
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('[data-act]'); if (!b) return;
+    var act = b.getAttribute('data-act');
+    if (act === 'edit') gtag('event', 'open_question_editor');
+    if (act === 'voice') gtag('event', 'open_voice_settings');
+    if (act === 'edone') gtag('event', 'questions_edited');
+  }, true);
+  check();
+})();
+</script>
+</body>
+</html>

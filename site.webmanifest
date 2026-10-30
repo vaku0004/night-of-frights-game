@@ -1,0 +1,12 @@
+{
+  "name": "Victoria’s Night of Frights",
+  "short_name": "Night of Frights",
+  "start_url": "/night-of-frights-game/",
+  "display": "fullscreen",
+  "background_color": "#15111d",
+  "theme_color": "#15111d",
+  "icons": [
+    { "src": "/night-of-frights-game/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/night-of-frights-game/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

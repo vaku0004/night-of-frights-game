@@ -1,0 +1,682 @@
+[
+  {
+    "file": "l-fe5f58b3.mp3",
+    "text": "Welcome to Victoria's Night of Frights. Pick a question... if you dare.",
+    "tts": "[mischievously] Welcome to Victoria's Night of Frights. Pick a question... [whispers] if you dare."
+  },
+  {
+    "file": "l-d87eb205.mp3",
+    "text": "Welcome to Victoria's Night of Frights! Tonight, our teams battle for glory, and for prizes. Here is how it works.",
+    "tts": "[mischievously] Welcome to Victoria's Night of Frights! Tonight, our teams battle for glory... and for prizes. [whispers] Here is how it works."
+  },
+  {
+    "file": "l-4c99f70c.mp3",
+    "text": "Rules of the game. Pick a question from the board. Beware the black cat and the witch. Survive two rounds and the midnight finale.",
+    "tts": "[whispers] Rules of the game. [mischievously] Pick a question from the board. Beware the black cat... and the witch. Survive two rounds... and the midnight finale."
+  },
+  {
+    "file": "l-964fe525.mp3",
+    "text": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell.",
+    "tts": "Pick a question. Five categories with five questions each. The higher the value, the harder the question. Teams take turns choosing a cell."
+  },
+  {
+    "file": "l-7f45ca59.mp3",
+    "text": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them.",
+    "tts": "30 seconds. The question is read aloud, then the clock starts. Only the team that picked it may answer. Everyone else stays quiet. Right: win the points. Wrong: lose them."
+  },
+  {
+    "file": "l-4300d7d8.mp3",
+    "text": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team survives the night and wins.",
+    "tts": "Play fair. No phones and no Googling. The host has the final word on close answers. Only one team survives the night and wins."
+  },
+  {
+    "file": "l-b399af4c.mp3",
+    "text": "Ready? The first team, pick a question. Good luck, and try not to scream.",
+    "tts": "Ready? The first team, pick a question. Good luck... and try not to scream. [laughs]"
+  },
+  {
+    "file": "l-f118166b.mp3",
+    "text": "Double trouble. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks.",
+    "tts": "Double trouble. Five new categories. Every value is doubled: 200 to 1,000. Same rules, bigger risks."
+  },
+  {
+    "file": "l-132c8a62.mp3",
+    "text": "Midnight. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it.",
+    "tts": "Midnight. One final question. You see only the category first. Secretly wager up to half of your score. Low on points? You can always bet up to 500. You get 60 seconds. Right: add your wager. Wrong: lose it."
+  },
+  {
+    "file": "l-4d13daa6.mp3",
+    "text": "Black cat in the bag! The team that found it must give this question to another team.",
+    "tts": "[mischievously] Black cat in the bag! The team that found it... must give this question to another team."
+  },
+  {
+    "file": "l-3c6cd720.mp3",
+    "text": "Who gets the cat?",
+    "tts": "[mischievously] So... who gets the cat?"
+  },
+  {
+    "file": "l-aeb58f70.mp3",
+    "text": "Deal with the Witch!",
+    "tts": "[whispers] Deal... [mischievously] with the Witch!"
+  },
+  {
+    "file": "l-a4c8ad99.mp3",
+    "text": "And now, with one of you, I shall make a deal! My first wand picks the price. My second wand picks the team that must answer. Answer right, and win it. Answer wrong, and lose it.",
+    "tts": "[whispers] And now... [mischievously] with one of you... I shall make a deal! [laughs] My first wand picks the price. My second wand picks the team that must answer. Answer right... and win it. Answer wrong... [whispers] and lose it."
+  },
+  {
+    "file": "l-85b11123.mp3",
+    "text": "It's a tie! Time for a tiebreaker.",
+    "tts": "[gasps] It's a tie! Time for a tiebreaker."
+  },
+  {
+    "file": "l-93236579.mp3",
+    "text": "In Bram Stoker's 1897 novel, which count travels from Transylvania to England?",
+    "tts": "In Bram Stoker's 1897 novel, which count travels from Transylvania to England?"
+  },
+  {
+    "file": "l-3e075422.mp3",
+    "text": "The answer is: Count Dracula. Stoker's count sails to Whitby, England, looking for new victims.",
+    "tts": "The answer is: Count Dracula. Stoker's count sails to Whitby, England, looking for new victims."
+  },
+  {
+    "file": "l-d7360ea7.mp3",
+    "text": "What is the first name of Dr. Frankenstein in Mary Shelley's novel?",
+    "tts": "What is the first name of Dr. Frankenstein in Mary Shelley's novel?"
+  },
+  {
+    "file": "l-70e6a9a8.mp3",
+    "text": "The answer is: Victor. The monster itself never gets a name.",
+    "tts": "The answer is: Victor. The monster itself never gets a name."
+  },
+  {
+    "file": "l-4047723f.mp3",
+    "text": "In Robert Louis Stevenson's story, Dr. Jekyll's evil alter ego is Mr. ___?",
+    "tts": "In Robert Louis Stevenson's story, Dr. Jekyll's evil alter ego is Mr. ___?"
+  },
+  {
+    "file": "l-ff3ac446.mp3",
+    "text": "The answer is: Hyde. Jekyll drinks a potion that turns him into the cruel Edward Hyde.",
+    "tts": "The answer is: Hyde. Jekyll drinks a potion that turns him into the cruel Edward Hyde."
+  },
+  {
+    "file": "l-b12b1a2b.mp3",
+    "text": "According to legend, a bullet made of which metal can stop a werewolf?",
+    "tts": "According to legend, a bullet made of which metal can stop a werewolf?"
+  },
+  {
+    "file": "l-b4908d30.mp3",
+    "text": "The answer is: Silver. Silver has long been linked to purity and protection from evil, and werewolf films made the silver bullet famous.",
+    "tts": "The answer is: Silver. Silver has long been linked to purity and protection from evil, and werewolf films made the silver bullet famous."
+  },
+  {
+    "file": "l-6d2edbeb.mp3",
+    "text": "Ancient Egyptians stored a mummy's organs in special containers. What are these jars called?",
+    "tts": "Ancient Egyptians stored a mummy's organs in special containers. What are these jars called?"
+  },
+  {
+    "file": "l-28e292d1.mp3",
+    "text": "The answer is: Canopic jars. The jars held the stomach, intestines, lungs and liver. The heart stayed inside the body.",
+    "tts": "The answer is: Canopic jars. The jars held the stomach, intestines, lungs and liver. The heart stayed inside the body."
+  },
+  {
+    "file": "l-0e44de7b.mp3",
+    "text": "Botanically speaking, is a pumpkin a fruit or a vegetable?",
+    "tts": "Botanically speaking, is a pumpkin a fruit or a vegetable?"
+  },
+  {
+    "file": "l-481a1bf6.mp3",
+    "text": "The answer is: A fruit. It grows from a flower and holds seeds, so botanists call it a fruit.",
+    "tts": "The answer is: A fruit. It grows from a flower and holds seeds, so botanists call it a fruit."
+  },
+  {
+    "file": "l-54dc5f1f.mp3",
+    "text": "Before pumpkins, people in Ireland and Scotland carved lanterns out of which root vegetable?",
+    "tts": "Before pumpkins, people in Ireland and Scotland carved lanterns out of which root vegetable?"
+  },
+  {
+    "file": "l-293a67bf.mp3",
+    "text": "The answer is: Turnips. Irish and Scottish immigrants switched to pumpkins in North America, which were bigger and easier to carve. Rutabagas count too.",
+    "tts": "The answer is: Turnips. Irish and Scottish immigrants switched to pumpkins in North America, which were bigger and easier to carve. Rutabagas count too."
+  },
+  {
+    "file": "l-3ed784ed.mp3",
+    "text": "In the Irish legend of \"Stingy Jack\", who did Jack trick?",
+    "tts": "In the Irish legend of \"Stingy Jack\", who did Jack trick?"
+  },
+  {
+    "file": "l-00efee8c.mp3",
+    "text": "The answer is: The Devil. Jack tricked the Devil, so heaven and hell both turned him away. He wanders with a coal inside a carved turnip.",
+    "tts": "The answer is: The Devil. Jack tricked the Devil, so heaven and hell both turned him away. He wanders with a coal inside a carved turnip."
+  },
+  {
+    "file": "l-a07d73fb.mp3",
+    "text": "What is the Spanish name for hulled pumpkin seeds, a popular snack?",
+    "tts": "What is the Spanish name for hulled pumpkin seeds, a popular snack?"
+  },
+  {
+    "file": "l-a66c9c20.mp3",
+    "text": "The answer is: Pepitas. Short for \"pepitas de calabaza\", meaning little squash seeds. They are popular in Mexican cooking.",
+    "tts": "The answer is: Pepitas. Short for \"pepitas de calabaza\", meaning little squash seeds. They are popular in Mexican cooking."
+  },
+  {
+    "file": "l-9d1f813a.mp3",
+    "text": "Pumpkin pie spice usually mixes cinnamon, ginger, cloves and which spice that originally came from the Banda Islands?",
+    "tts": "Pumpkin pie spice usually mixes cinnamon, ginger, cloves and which spice that originally came from the Banda Islands?"
+  },
+  {
+    "file": "l-698f7a1d.mp3",
+    "text": "The answer is: Nutmeg. Nutmeg comes from a tree native to the Banda Islands in Indonesia, once the world's only source.",
+    "tts": "The answer is: Nutmeg. Nutmeg comes from a tree native to the Banda Islands in Indonesia, once the world's only source."
+  },
+  {
+    "file": "l-7fe70763.mp3",
+    "text": "For decades, Canadian kids carried small orange boxes while trick-or-treating to collect coins for which organization?",
+    "tts": "For decades, Canadian kids carried small orange boxes while trick-or-treating to collect coins for which organization?"
+  },
+  {
+    "file": "l-281d6232.mp3",
+    "text": "The answer is: UNICEF. UNICEF Canada started the program in 1955 and retired the boxes in 2006.",
+    "tts": "The answer is: UNICEF. UNICEF Canada started the program in 1955 and retired the boxes in 2006."
+  },
+  {
+    "file": "l-8d50cc66.mp3",
+    "text": "The earliest known record of kids in English-speaking North America going door to door on Halloween is a 1911 newspaper report from which Ontario city?",
+    "tts": "The earliest known record of kids in English-speaking North America going door to door on Halloween is a 1911 newspaper report from which Ontario city?"
+  },
+  {
+    "file": "l-253bf747.mp3",
+    "text": "The answer is: Kingston. Kids went \"guising\" and got nuts and candy for songs and rhymes.",
+    "tts": "The answer is: Kingston. Kids went \"guising\" and got nuts and candy for songs and rhymes."
+  },
+  {
+    "file": "l-4fa417f5.mp3",
+    "text": "Which wafer chocolate bar, a Canadian favourite, has a coffee-flavoured filling?",
+    "tts": "Which wafer chocolate bar, a Canadian favourite, has a coffee-flavoured filling?"
+  },
+  {
+    "file": "l-32c67fcc.mp3",
+    "text": "The answer is: Coffee Crisp. Layers of vanilla wafer and foamed coffee-flavoured candy in milk chocolate, made by Nestlé in Toronto.",
+    "tts": "The answer is: Coffee Crisp. Layers of vanilla wafer and foamed coffee-flavoured candy in milk chocolate, made by Nestlé in Toronto."
+  },
+  {
+    "file": "l-10a1fc30.mp3",
+    "text": "Legend says a ghostly bellman named Sam still helps guests at which castle-like hotel in the Rockies?",
+    "tts": "Legend says a ghostly bellman named Sam still helps guests at which castle-like hotel in the Rockies?"
+  },
+  {
+    "file": "l-bbba5bd1.mp3",
+    "text": "The answer is: The Fairmont Banff Springs. Guests say he helps with stuck doors and directions, then vanishes. The legend is based on a real bellman.",
+    "tts": "The answer is: The Fairmont Banff Springs. Guests say he helps with stuck doors and directions, then vanishes. The legend is based on a real bellman."
+  },
+  {
+    "file": "l-ca4db1b5.mp3",
+    "text": "From 1999 to 2019, people in Windsor, Nova Scotia raced across a lake sitting in what?",
+    "tts": "From 1999 to 2019, people in Windsor, Nova Scotia raced across a lake sitting in what?"
+  },
+  {
+    "file": "l-f6f31887.mp3",
+    "text": "The answer is: Giant hollowed-out pumpkins. The Windsor Pumpkin Regatta on Lake Pisiquid used giant pumpkins grown at the Dill family farm.",
+    "tts": "The answer is: Giant hollowed-out pumpkins. The Windsor Pumpkin Regatta on Lake Pisiquid used giant pumpkins grown at the Dill family farm."
+  },
+  {
+    "file": "l-e8383118.mp3",
+    "text": "In John Carpenter's 1978 film \"Halloween\", what is the masked killer's name?",
+    "tts": "In John Carpenter's 1978 film \"Halloween\", what is the masked killer's name?"
+  },
+  {
+    "file": "l-cdd7533e.mp3",
+    "text": "The answer is: Michael Myers. He escapes a psychiatric hospital and returns to his hometown of Haddonfield, Illinois.",
+    "tts": "The answer is: Michael Myers. He escapes a psychiatric hospital and returns to his hometown of Haddonfield, Illinois."
+  },
+  {
+    "file": "l-5e8fd6b0.mp3",
+    "text": "Which 1960 Alfred Hitchcock film made a shower at the Bates Motel terrifying?",
+    "tts": "Which 1960 Alfred Hitchcock film made a shower at the Bates Motel terrifying?"
+  },
+  {
+    "file": "l-127a480b.mp3",
+    "text": "The answer is: Psycho. Janet Leigh's shower scene is one of the most famous scenes in film history.",
+    "tts": "The answer is: Psycho. Janet Leigh's shower scene is one of the most famous scenes in film history."
+  },
+  {
+    "file": "l-a2038a08.mp3",
+    "text": "In \"The Nightmare Before Christmas\", what is the Pumpkin King's full name?",
+    "tts": "In \"The Nightmare Before Christmas\", what is the Pumpkin King's full name?"
+  },
+  {
+    "file": "l-9ed6f49e.mp3",
+    "text": "The answer is: Jack Skellington. The 1993 stop-motion film, produced by Tim Burton, is set in Halloween Town.",
+    "tts": "The answer is: Jack Skellington. The 1993 stop-motion film, produced by Tim Burton, is set in Halloween Town."
+  },
+  {
+    "file": "l-c7390aff.mp3",
+    "text": "In which 1982 film does a little girl turn to the TV and announce \"They're here\"?",
+    "tts": "In which 1982 film does a little girl turn to the TV and announce \"They're here\"?"
+  },
+  {
+    "file": "l-ab359e18.mp3",
+    "text": "The answer is: Poltergeist. Little Carol Anne says it to the static on the family's TV screen.",
+    "tts": "The answer is: Poltergeist. Little Carol Anne says it to the static on the family's TV screen."
+  },
+  {
+    "file": "l-848ab893.mp3",
+    "text": "In \"Ghostbusters\" (1984), which giant creature stomps through New York in the finale?",
+    "tts": "In \"Ghostbusters\" (1984), which giant creature stomps through New York in the finale?"
+  },
+  {
+    "file": "l-eeccaf62.mp3",
+    "text": "The answer is: The Stay Puft Marshmallow Man. Ray tries to think of something harmless, and the villain Gozer takes that shape.",
+    "tts": "The answer is: The Stay Puft Marshmallow Man. Ray tries to think of something harmless, and the villain Gozer takes that shape."
+  },
+  {
+    "file": "l-ebb21df5.mp3",
+    "text": "What is the fear of spiders called?",
+    "tts": "What is the fear of spiders called?"
+  },
+  {
+    "file": "l-3e640301.mp3",
+    "text": "The answer is: Arachnophobia. From the Greek word \"arachne\", spider.",
+    "tts": "The answer is: Arachnophobia. From the Greek word \"arachne\", spider."
+  },
+  {
+    "file": "l-2d8927cb.mp3",
+    "text": "What is the fear of the number 13 called?",
+    "tts": "What is the fear of the number 13 called?"
+  },
+  {
+    "file": "l-3e147c1c.mp3",
+    "text": "The answer is: Triskaidekaphobia. From Greek: \"tris\" (three), \"kai\" (and), \"deka\" (ten).",
+    "tts": "The answer is: Triskaidekaphobia. From Greek: \"tris\" (three), \"kai\" (and), \"deka\" (ten)."
+  },
+  {
+    "file": "l-e9205013.mp3",
+    "text": "\"Nomophobia\" is the fear of being without what?",
+    "tts": "\"Nomophobia\" is the fear of being without what?"
+  },
+  {
+    "file": "l-a52e5d7a.mp3",
+    "text": "The answer is: Your mobile phone. Short for \"no mobile phone phobia\".",
+    "tts": "The answer is: Your mobile phone. Short for \"no mobile phone phobia\"."
+  },
+  {
+    "file": "l-f1d6355f.mp3",
+    "text": "\"Coulrophobia\" is the fear of what?",
+    "tts": "\"Coulrophobia\" is the fear of what?"
+  },
+  {
+    "file": "l-7e7b8702.mp3",
+    "text": "The answer is: Clowns. Often traced to a Greek word for a stilt-walker.",
+    "tts": "The answer is: Clowns. Often traced to a Greek word for a stilt-walker."
+  },
+  {
+    "file": "l-b7136032.mp3",
+    "text": "What is the name for the fear of Halloween?",
+    "tts": "What is the name for the fear of Halloween?"
+  },
+  {
+    "file": "l-9727bda3.mp3",
+    "text": "The answer is: Samhainophobia. Named after Samhain, the Celtic festival that Halloween grew from.",
+    "tts": "The answer is: Samhainophobia. Named after Samhain, the Celtic festival that Halloween grew from."
+  },
+  {
+    "file": "l-d18972a4.mp3",
+    "text": "Round Two. The stakes just went up.",
+    "tts": "Round Two. [mischievously] The stakes just went up."
+  },
+  {
+    "file": "l-0daf39ea.mp3",
+    "text": "What do witches traditionally fly on?",
+    "tts": "What do witches traditionally fly on?"
+  },
+  {
+    "file": "l-0992e9e4.mp3",
+    "text": "The answer is: A broomstick. Old folk tales and woodcuts showed witches riding brooms to secret gatherings.",
+    "tts": "The answer is: A broomstick. Old folk tales and woodcuts showed witches riding brooms to secret gatherings."
+  },
+  {
+    "file": "l-5c720d6b.mp3",
+    "text": "In 1692, a famous series of witch trials took place in which Massachusetts town?",
+    "tts": "In 1692, a famous series of witch trials took place in which Massachusetts town?"
+  },
+  {
+    "file": "l-a50432f2.mp3",
+    "text": "The answer is: Salem. About 200 people were accused, and 20 were executed.",
+    "tts": "The answer is: Salem. About 200 people were accused, and 20 were executed."
+  },
+  {
+    "file": "l-2e1f960e.mp3",
+    "text": "How many witches appear at the start of Shakespeare's \"Macbeth\"?",
+    "tts": "How many witches appear at the start of Shakespeare's \"Macbeth\"?"
+  },
+  {
+    "file": "l-e2d15ef1.mp3",
+    "text": "The answer is: Three. The Weird Sisters predict that Macbeth will become king.",
+    "tts": "The answer is: Three. The Weird Sisters predict that Macbeth will become king."
+  },
+  {
+    "file": "l-32fd2b61.mp3",
+    "text": "In \"The Wizard of Oz\" (1939), what makes the Wicked Witch of the West melt?",
+    "tts": "In \"The Wizard of Oz\" (1939), what makes the Wicked Witch of the West melt?"
+  },
+  {
+    "file": "l-5e0671a4.mp3",
+    "text": "The answer is: A bucket of water. Dorothy throws water to put out a fire on the Scarecrow and splashes the witch.",
+    "tts": "The answer is: A bucket of water. Dorothy throws water to put out a fire on the Scarecrow and splashes the witch."
+  },
+  {
+    "file": "l-3bdd561c.mp3",
+    "text": "In Slavic folklore, which witch lives in a hut that stands on chicken legs?",
+    "tts": "In Slavic folklore, which witch lives in a hut that stands on chicken legs?"
+  },
+  {
+    "file": "l-c045699e.mp3",
+    "text": "The answer is: Baba Yaga. In the tales, Baba Yaga flies in a mortar and steers with a pestle.",
+    "tts": "The answer is: Baba Yaga. In the tales, Baba Yaga flies in a mortar and steers with a pestle."
+  },
+  {
+    "file": "l-55514238.mp3",
+    "text": "Name the three colours of classic candy corn.",
+    "tts": "Name the three colours of classic candy corn."
+  },
+  {
+    "file": "l-439b7d44.mp3",
+    "text": "The answer is: White, orange and yellow. From the tip down: white, orange, then a yellow base.",
+    "tts": "The answer is: White, orange and yellow. From the tip down: white, orange, then a yellow base."
+  },
+  {
+    "file": "l-b2690e29.mp3",
+    "text": "The Snickers bar was named after what kind of animal owned by the Mars family?",
+    "tts": "The Snickers bar was named after what kind of animal owned by the Mars family?"
+  },
+  {
+    "file": "l-78982261.mp3",
+    "text": "The answer is: A horse. The Mars family named the bar after their favourite horse, Snickers, around 1930.",
+    "tts": "The answer is: A horse. The Mars family named the bar after their favourite horse, Snickers, around 1930."
+  },
+  {
+    "file": "l-7104fa5a.mp3",
+    "text": "The bar we now call Kit Kat was launched in 1935 under a different name. In which country was it made?",
+    "tts": "The bar we now call Kit Kat was launched in 1935 under a different name. In which country was it made?"
+  },
+  {
+    "file": "l-793497d5.mp3",
+    "text": "The answer is: England (United Kingdom). Rowntree's of York sold it as \"Chocolate Crisp\". It became Kit Kat in 1937.",
+    "tts": "The answer is: England (United Kingdom). Rowntree's of York sold it as \"Chocolate Crisp\". It became Kit Kat in 1937."
+  },
+  {
+    "file": "l-a3d9d787.mp3",
+    "text": "In Canada, Smarties are candy-coated chocolates. What are Smarties in the United States?",
+    "tts": "In Canada, Smarties are candy-coated chocolates. What are Smarties in the United States?"
+  },
+  {
+    "file": "l-962ca735.mp3",
+    "text": "The answer is: Tart sugar tablets sold in rolls. Canadian Smarties are made by Nestlé. The American candy with the same name is a completely different sweet.",
+    "tts": "The answer is: Tart sugar tablets sold in rolls. Canadian Smarties are made by Nestlé. The American candy with the same name is a completely different sweet."
+  },
+  {
+    "file": "l-155f2d08.mp3",
+    "text": "This New Brunswick company, Canada's oldest candy maker (founded 1873), is credited with the first wrapped chocolate bar. Name it.",
+    "tts": "This New Brunswick company, Canada's oldest candy maker (founded 1873), is credited with the first wrapped chocolate bar. Name it."
+  },
+  {
+    "file": "l-93353b54.mp3",
+    "text": "The answer is: Ganong. Ganong Bros. of St. Stephen, New Brunswick, began selling its first chocolate bars in 1910.",
+    "tts": "The answer is: Ganong. Ganong Bros. of St. Stephen, New Brunswick, began selling its first chocolate bars in 1910."
+  },
+  {
+    "file": "l-e609c680.mp3",
+    "text": "Which flying mammal finds its way in the dark using echolocation?",
+    "tts": "Which flying mammal finds its way in the dark using echolocation?"
+  },
+  {
+    "file": "l-c79eb647.mp3",
+    "text": "The answer is: The bat. Bats make high-pitched calls and listen for the echoes to find insects in the dark.",
+    "tts": "The answer is: The bat. Bats make high-pitched calls and listen for the echoes to find insects in the dark."
+  },
+  {
+    "file": "l-84fe373b.mp3",
+    "text": "What is a group of owls called?",
+    "tts": "What is a group of owls called?"
+  },
+  {
+    "file": "l-c650ac32.mp3",
+    "text": "The answer is: A parliament. Owls usually live alone, but a group of them is called a parliament.",
+    "tts": "The answer is: A parliament. Owls usually live alone, but a group of them is called a parliament."
+  },
+  {
+    "file": "l-20383ac0.mp3",
+    "text": "Which spider is known for a red hourglass mark on its belly?",
+    "tts": "Which spider is known for a red hourglass mark on its belly?"
+  },
+  {
+    "file": "l-3be4e70f.mp3",
+    "text": "The answer is: The black widow. The red hourglass is on the underside of the female's abdomen.",
+    "tts": "The answer is: The black widow. The red hourglass is on the underside of the female's abdomen."
+  },
+  {
+    "file": "l-e07559ca.mp3",
+    "text": "Vampire bats really exist. What do they feed on?",
+    "tts": "Vampire bats really exist. What do they feed on?"
+  },
+  {
+    "file": "l-50360565.mp3",
+    "text": "The answer is: Blood. Usually from livestock and birds. They lap it up rather than suck it.",
+    "tts": "The answer is: Blood. Usually from livestock and birds. They lap it up rather than suck it."
+  },
+  {
+    "file": "l-bb58a535.mp3",
+    "text": "About how many degrees can an owl turn its head?",
+    "tts": "About how many degrees can an owl turn its head?"
+  },
+  {
+    "file": "l-1cff18e5.mp3",
+    "text": "The answer is: About 270 degrees. Owls have twice as many neck bones as people, so they can look over their backs.",
+    "tts": "The answer is: About 270 degrees. Owls have twice as many neck bones as people, so they can look over their backs."
+  },
+  {
+    "file": "l-c62dc024.mp3",
+    "text": "Which Mexican holiday on November 1–2 honours loved ones who have died?",
+    "tts": "Which Mexican holiday on November 1–2 honours loved ones who have died?"
+  },
+  {
+    "file": "l-f2987662.mp3",
+    "text": "The answer is: Día de los Muertos (Day of the Dead). Families build altars called ofrendas with photos, marigolds and the favourite foods of the dead.",
+    "tts": "The answer is: Día de los Muertos (Day of the Dead). Families build altars called ofrendas with photos, marigolds and the favourite foods of the dead."
+  },
+  {
+    "file": "l-1b2971d4.mp3",
+    "text": "Halloween grew out of which ancient Celtic festival?",
+    "tts": "Halloween grew out of which ancient Celtic festival?"
+  },
+  {
+    "file": "l-f5c99851.mp3",
+    "text": "The answer is: Samhain. Samhain marked the end of the harvest, when the line to the spirit world was believed to grow thin.",
+    "tts": "The answer is: Samhain. Samhain marked the end of the harvest, when the line to the spirit world was believed to grow thin."
+  },
+  {
+    "file": "l-e996ad25.mp3",
+    "text": "Decorated sugar skulls made for the Day of the Dead have what Spanish name?",
+    "tts": "Decorated sugar skulls made for the Day of the Dead have what Spanish name?"
+  },
+  {
+    "file": "l-374b4f62.mp3",
+    "text": "The answer is: Calaveras (de azúcar). \"Calavera\" is Spanish for skull. The sugar skulls often carry the name of a loved one.",
+    "tts": "The answer is: Calaveras (de azúcar). \"Calavera\" is Spanish for skull. The sugar skulls often carry the name of a loved one."
+  },
+  {
+    "file": "l-096ba8b1.mp3",
+    "text": "On what date does Britain celebrate Guy Fawkes Night with bonfires and fireworks?",
+    "tts": "On what date does Britain celebrate Guy Fawkes Night with bonfires and fireworks?"
+  },
+  {
+    "file": "l-c2ebacfd.mp3",
+    "text": "The answer is: November 5. It marks the failed Gunpowder Plot of 1605 to blow up the Houses of Parliament.",
+    "tts": "The answer is: November 5. It marks the failed Gunpowder Plot of 1605 to blow up the Houses of Parliament."
+  },
+  {
+    "file": "l-c9c17094.mp3",
+    "text": "The word \"Halloween\" is a shortened form of which phrase?",
+    "tts": "The word \"Halloween\" is a shortened form of which phrase?"
+  },
+  {
+    "file": "l-9b53abe1.mp3",
+    "text": "The answer is: All Hallows' Eve. \"Hallow\" is an old word for saint. October 31 is the evening before All Saints' Day.",
+    "tts": "The answer is: All Hallows' Eve. \"Hallow\" is an old word for saint. October 31 is the evening before All Saints' Day."
+  },
+  {
+    "file": "l-74ce1aba.mp3",
+    "text": "In the \"Scream\" films, what is the masked killer called?",
+    "tts": "In the \"Scream\" films, what is the masked killer called?"
+  },
+  {
+    "file": "l-d1505a6a.mp3",
+    "text": "The answer is: Ghostface. The mask is often compared to Edvard Munch's painting \"The Scream\".",
+    "tts": "The answer is: Ghostface. The mask is often compared to Edvard Munch's painting \"The Scream\"."
+  },
+  {
+    "file": "l-9703b2e4.mp3",
+    "text": "How many times must you say his name to summon Beetlejuice?",
+    "tts": "How many times must you say his name to summon Beetlejuice?"
+  },
+  {
+    "file": "l-0e3d41bd.mp3",
+    "text": "The answer is: Three. Saying \"Beetlejuice\" three times calls him into the world of the living.",
+    "tts": "The answer is: Three. Saying \"Beetlejuice\" three times calls him into the world of the living."
+  },
+  {
+    "file": "l-c98b321b.mp3",
+    "text": "In \"Hocus Pocus\" (1993), what is the name of the boy turned into an immortal black cat?",
+    "tts": "In \"Hocus Pocus\" (1993), what is the name of the boy turned into an immortal black cat?"
+  },
+  {
+    "file": "l-b68e1a2c.mp3",
+    "text": "The answer is: Thackery Binx. The Sanderson sisters cursed Thackery in 1693 for trying to save his little sister.",
+    "tts": "The answer is: Thackery Binx. The Sanderson sisters cursed Thackery in 1693 for trying to save his little sister."
+  },
+  {
+    "file": "l-6ecf50bc.mp3",
+    "text": "Which Stephen King novel features the clown Pennywise?",
+    "tts": "Which Stephen King novel features the clown Pennywise?"
+  },
+  {
+    "file": "l-4f3d25bd.mp3",
+    "text": "The answer is: It. Stephen King published \"It\" in 1986. Pennywise returns to Derry, Maine, every 27 years.",
+    "tts": "The answer is: It. Stephen King published \"It\" in 1986. Pennywise returns to Derry, Maine, every 27 years."
+  },
+  {
+    "file": "l-f572bd3c.mp3",
+    "text": "What is the name of the hotel in \"The Shining\"?",
+    "tts": "What is the name of the hotel in \"The Shining\"?"
+  },
+  {
+    "file": "l-e99259df.mp3",
+    "text": "The answer is: The Overlook Hotel. Jack Torrance becomes the winter caretaker of the Overlook, high in the Colorado Rockies.",
+    "tts": "The answer is: The Overlook Hotel. Jack Torrance becomes the winter caretaker of the Overlook, high in the Colorado Rockies."
+  },
+  {
+    "file": "l-8e298c53.mp3",
+    "text": "Midnight has come. The final category is: The Real Dracula. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more.",
+    "tts": "[whispers] Midnight has come. The final category is: The Real Dracula. Write down your secret wagers. You may bet up to half of your score, or up to 500 if that is more."
+  },
+  {
+    "file": "l-04eecb2b.mp3",
+    "text": "Bram Stoker borrowed Dracula's name from a 15th-century ruler of Wallachia who was infamous for punishing enemies on wooden stakes. What was this ruler's name?",
+    "tts": "Bram Stoker borrowed Dracula's name from a 15th-century ruler of Wallachia who was infamous for punishing enemies on wooden stakes. What was this ruler's name?"
+  },
+  {
+    "file": "l-a2f59f0b.mp3",
+    "text": "The answer is: Vlad the Impaler. Also known as Vlad III, or Vlad Dracula. \"Dracula\" means \"son of the dragon\".",
+    "tts": "The answer is: Vlad the Impaler. Also known as Vlad III, or Vlad Dracula. \"Dracula\" means \"son of the dragon\"."
+  },
+  {
+    "file": "l-437475b3.mp3",
+    "text": "In what year was Bram Stoker's novel \"Dracula\" first published?",
+    "tts": "In what year was Bram Stoker's novel \"Dracula\" first published?"
+  },
+  {
+    "file": "l-88857890.mp3",
+    "text": "The answer is: 1897. Dracula was first published in London in May 1897.",
+    "tts": "The answer is: 1897. Dracula was first published in London in May 1897."
+  },
+  {
+    "file": "l-05e25b0d.mp3",
+    "text": "Team Pumpkins survive the night!",
+    "tts": "[excited] Team Pumpkins survive the night! [applause]"
+  },
+  {
+    "file": "l-94222c6e.mp3",
+    "text": "Team Bats survive the night!",
+    "tts": "[excited] Team Bats survive the night! [applause]"
+  },
+  {
+    "file": "l-61279852.mp3",
+    "text": "Team Ghosts survive the night!",
+    "tts": "[excited] Team Ghosts survive the night! [applause]"
+  },
+  {
+    "file": "l-9c0dd203.mp3",
+    "text": "Team Witches survive the night!",
+    "tts": "[excited] Team Witches survive the night! [applause]"
+  },
+  {
+    "file": "l-d212a1cc.mp3",
+    "text": "The price: 100 points!",
+    "tts": "[mischievously] The price... 100 points!"
+  },
+  {
+    "file": "l-494dcb81.mp3",
+    "text": "The price: 200 points!",
+    "tts": "[mischievously] The price... 200 points!"
+  },
+  {
+    "file": "l-53fff7fa.mp3",
+    "text": "The price: 300 points!",
+    "tts": "[mischievously] The price... 300 points!"
+  },
+  {
+    "file": "l-3f1e82cf.mp3",
+    "text": "The price: 400 points!",
+    "tts": "[mischievously] The price... 400 points!"
+  },
+  {
+    "file": "l-2e88ad90.mp3",
+    "text": "The price: 500 points!",
+    "tts": "[mischievously] The price... 500 points!"
+  },
+  {
+    "file": "l-cbe0a1b5.mp3",
+    "text": "The price: 600 points!",
+    "tts": "[mischievously] The price... 600 points!"
+  },
+  {
+    "file": "l-cc27cd63.mp3",
+    "text": "The price: 800 points!",
+    "tts": "[mischievously] The price... 800 points!"
+  },
+  {
+    "file": "l-b9ee2660.mp3",
+    "text": "The price: 1000 points!",
+    "tts": "[mischievously] The price... 1000 points!"
+  },
+  {
+    "file": "l-64080af9.mp3",
+    "text": "Team Pumpkins, the deal is yours!",
+    "tts": "Team Pumpkins... the deal is yours! [laughs]"
+  },
+  {
+    "file": "l-b163cf20.mp3",
+    "text": "Team Bats, the deal is yours!",
+    "tts": "Team Bats... the deal is yours! [laughs]"
+  },
+  {
+    "file": "l-927203d4.mp3",
+    "text": "Team Ghosts, the deal is yours!",
+    "tts": "Team Ghosts... the deal is yours! [laughs]"
+  },
+  {
+    "file": "l-2be5bff3.mp3",
+    "text": "Team Witches, the deal is yours!",
+    "tts": "Team Witches... the deal is yours! [laughs]"
+  }
+]
