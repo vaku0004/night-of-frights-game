@@ -326,6 +326,61 @@ input[type=range]{width:100%;accent-color:var(--candle)}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
 </style>
+<style id="nof-mobile">
+@media (max-width:700px), (max-height:520px) and (orientation:landscape){
+  .board-screen{height:auto;min-height:0;gap:10px}
+  .board-screen .board-wrap{flex:none;overflow:visible}
+  .board-screen .board,.board{min-width:0;height:auto;grid-template-rows:auto;gap:6px}
+  .board-screen .cell{aspect-ratio:16/10;min-height:0}
+  .board-screen .topbar{gap:8px 12px}
+  .board-screen .tools{gap:6px}
+  .board-screen .tools .btn{font-size:.8rem;padding:.4em .8em}
+}
+@media (max-width:700px){
+  #app{padding-block:12px 28px}
+  .board-screen .round-name{font-size:1.9rem}
+  .board-screen .scores{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .board-screen .team{padding:6px 8px;gap:2px 6px;border-radius:8px}
+  .board-screen .team .tname{font-size:.88rem;line-height:1.15}
+  .board-screen .team .tag{font-size:.6rem;letter-spacing:.08em}
+  .board-screen .team .score{font-size:1.45rem}
+  .board-screen .team .adj{gap:4px}
+  .board-screen .team .adj button{width:30px;height:24px}
+  .board-screen .board{gap:5px}
+  .board-screen .cat{font-size:.58rem;letter-spacing:.02em;padding:4px 1px 6px;min-height:42px;line-height:1.15;
+    overflow-wrap:anywhere;hyphens:auto;border-bottom-width:2px}
+  .board-screen .cell{aspect-ratio:1/1;font-size:1.05rem;border-radius:8px}
+  .board-screen .board-foot{font-size:.82rem;gap:8px}
+  .board-screen .board-foot .btn{font-size:.82rem;padding:.4em .85em}
+  .reels{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .reel{padding:12px 8px;gap:8px;border-radius:12px}
+  .reel-label{font-size:.6rem;letter-spacing:.08em}
+  .reel-face{font-size:2.6rem}
+  .reel-face.teamname{font-size:1.5rem}
+  .reel .btn{font-size:.8rem;padding:.4em .8em}
+  .howto{gap:8px}
+  .howto li{padding:10px 12px;font-size:.95rem}
+  .qhead .val{font-size:1.6rem}
+  .cat-team{font-size:2rem}
+}
+@media (max-height:520px) and (orientation:landscape) and (min-width:701px){
+  #app{padding-block:8px 16px}
+  .board-screen{gap:6px}
+  .board-screen .round-name{font-size:1.5rem}
+  .board-screen .team{padding:4px 10px}
+  .board-screen .team .score{font-size:1.3rem}
+  .board-screen .team .adj button{height:22px}
+  .board-screen .cat{min-height:0;padding:2px 4px 4px;font-size:.66rem}
+  .board-screen .cell{aspect-ratio:auto;height:46px;font-size:1.25rem}
+  .board-screen .board{gap:5px}
+  .board-screen .board-foot{font-size:.8rem}
+}
+@media (max-width:380px){
+  .board-screen .cat{font-size:.52rem}
+  .board-screen .cell{font-size:.95rem}
+  .reel-face{font-size:2.2rem}
+}
+</style>
 </head>
 <body>
 <div id="app"><main class="nof-static" style="max-width:760px;margin:0 auto;padding:40px 16px;font-family:Georgia,serif;color:#f2e9d8">
